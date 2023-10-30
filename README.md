@@ -32,6 +32,4 @@ Here are some ideas to get you started:
   
 </div>
 
-<img src="./volibear.gif" alt="Volibear" height="180em" width="180em">
-
 
