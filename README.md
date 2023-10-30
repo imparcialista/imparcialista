@@ -29,8 +29,6 @@ Here are some ideas to get you started:
   <a href="https://www.linkedin.com/in/gabriel-lima-9b4431270/">
   <img height="180em" img align="left"src="https://github-readme-stats.vercel.app/api?username=sanshee2&show_icons=true&theme=tokyonight&hide=issues"/>
   <img height="180em" align="left"src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=tokyonight"/>  
-  <img src="./volibear.gif" alt="Volibear" height="180em" width="180em">
-  <img src="./volibear.gif" alt="Volibear" height="180em" width="180em">
 </div>
 <img src="./volibear.gif" alt="Volibear" height="180em" width="180em">
 
