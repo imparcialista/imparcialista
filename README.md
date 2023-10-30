@@ -29,5 +29,6 @@ Here are some ideas to get you started:
   <img src="./volibear.gif" alt="Volibear" height="30em" width="30em">
 </div>
 <img height="180em" img align="left"src="https://github-readme-stats.vercel.app/api?username=sanshee2&show_icons=true&theme=tokyonight&hide=issues"/>
+<img src="./volibear.gif" alt="Volibear" height="30em" width="30em">
 
 
