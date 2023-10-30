@@ -22,9 +22,7 @@ Here are some ideas to get you started:
     <p>-Pronomes: Ele/Dele</p>
     <p href="https://www.educamaisbrasil.com.br/enem/biologia/banana">-Bananas são, em termos botânicos, ervas.</p>
   </div>
-  <div class="flex-item">
-    <img src="./volibear.gif" alt="Volibear" height="180em" width="180em">
-  </div>
+
 </div>
 
 <div style="display: inline_block">
@@ -32,4 +30,8 @@ Here are some ideas to get you started:
   <img height="180em" img align="left"src="https://github-readme-stats.vercel.app/api?username=sanshee2&show_icons=true&theme=tokyonight&hide=issues"/>
   <img height="180em" align="left"src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=tokyonight"/>  
 </div>
+
+  <div class="flex-item">
+    <img src="./volibear.gif" alt="Volibear" height="180em" width="180em">
+  </div>
 
