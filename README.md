@@ -25,7 +25,6 @@ Here are some ideas to get you started:
 
 <div>
   <a href="https://www.linkedin.com/in/gabriel-lima-9b4431270/">
-  
   <img height="180em" align="left"src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact&theme=tokyonight"/>
   <img src="./volibear.gif" alt="Volibear" height="10em" width="10em">
   
