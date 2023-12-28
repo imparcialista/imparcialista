@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>Jogo da Velha</title>
+      <link rel="stylesheet" href="style.css" />
+
+      <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+      <link rel="manifest" href="./icon/site.webmanifest">
+
+      <script defer src="script.js"></script>
+
+    </head>
+
+    <body>
+
+		<header class="cabecalho">
+			<div class="logo__display">
+				<div class="logo">T2</div>
+				<p>TRIO DE DOIS</p>
+			</div>
+			
+			<nav class="cabecalho__menu">
+				<a class="cabecalho__menu_link" href="index.html">#jogo-da-velha</a>
+				<a class="cabecalho__menu_link" href="login.html">fazer login</a>
+			</nav>
+		</header>
+    
+		<section class="tabela">	
+			<section class="jogo">
+				<h1 class="jogo__titulo"># JOGO DA VELHA</h1>
+			<div class="tabuleiro">
+				<div class="board">
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+					<div class="square"></div>
+				</div>
+				<button type="button" onclick="recarregarAPagina()" class="reiniciar__button" disabled>Reiniciar</button>
+
+			</div>
+
+			
+			<div>
+				<p>Vitórias do Azul: 0 | Vitórias do Vermelho: 0</p>
+					<div class="jogo__titulo">Vitórias</div>
+					<div>Jogador 1: 0 | Jogador 2: 0</div>
+				<br>
+			</div>
+			</section>
+		</section>
+
+		<footer class="rodape">
+			<p>Desenvolvido por um trio de dois, 
+        <strong><a href="https://github.com/sanshee2">Gabriel Lima</a>
+        </strong> e <strong><a href="https://github.com/imparcialista">Lucas Araujo.</a></strong></p>
+		<p>Acesse aqui o <a href="https://github.com/sanshee2/trio-de-dois"><strong>repositório original.</strong></a></p>
+		</footer>
+
+
+  </body>
+</html>
