@@ -23,7 +23,6 @@ regras_arquivos = {
 
     'vinculo_produtos_multiloja': 'Apagar',
 
-
 }
 
 lista_arquivos = os.listdir(pasta_origem)

@@ -1,10 +1,31 @@
+from tkinter.filedialog import askdirectory
 import pyautogui as gui
 import time
+import os
 
-pasta = f'D:/Organizar/Tudo/A Pasta Geral/arrumar/ETP1 LUCAS/imagens/sem_fundo'
+# pasta = f'D:/Organizar/Tudo/A Pasta Geral/arrumar/ETP1 LUCAS/imagens/sem_fundo'
 
 prefixo = 'cri-'
-extensao_arquivo = '.png'
+# extensao_arquivo = '.png'
+extensao_arquivo = {
+    '.png': 'Extensão Png'
+    }
+
+pasta_origem = askdirectory(title='Pasta origem')
+pasta_destino = askdirectory(title='Pasta destino')
+lista_append = []
+
+lista_arquivos = os.listdir(pasta_origem)
+# print(lista_arquivos) # listar itens da pasta de origem
+
+for nome_arquivo in lista_arquivos:
+    for chave in extensao_arquivo.keys():
+        if chave in nome_arquivo:
+            lista_append.append(nome_arquivo)
+            #print(lista_append)
+
+print(lista_append)
+
 
 clicar_na_imagem = 961, 557
 selecionar_troca_imagem = 1709, 541
@@ -20,264 +41,6 @@ contador = 0
 gui.PAUSE = 1
 gui.alert('O progama foi inciado, solte o mouse e teclado')
 time.sleep(1)
-
-lista_inativos = ['58',
-'60',
-'68',
-'72',
-'77',
-'79',
-'81',
-'83',
-'101',
-'105',
-'115',
-'123',
-'125',
-'195',
-'197',
-'323',
-'325',
-'327',
-'329',
-'331',
-'333',
-'335',
-'337',
-'342',
-'355',
-'367',
-'369',
-'371',
-'373',
-'375',
-'377',
-'379',
-'381',
-'383',
-'387',
-'389',
-'391',
-'395',
-'397',
-'399',
-'401',
-'413',
-'415',
-'425',
-'429',
-'431',
-'439',
-'443',
-'451',
-'453',
-'455',
-'457',
-'469',
-'473',
-'475',
-'477',
-'481',
-'483',
-'485',
-'485cx',
-'491',
-'497',
-'499',
-'500',
-'502',
-'504',
-'510',
-'512',
-'518',
-'521',
-'523',
-'524',
-'525',
-'526',
-'527',
-'528',
-'530',
-'536',
-'538',
-'562',
-'564',
-'566',
-'568',
-'570',
-'582',
-'586',
-'592',
-'594',
-'598',
-'600',
-'602',
-'604',
-'606',
-'608',
-'610',
-'612',
-'614',
-'616',
-'618',
-'620',
-'622',
-'624',
-'626',
-'628',
-'630',
-'632',
-'669',
-'703',
-'721',
-'723',
-'725',
-'727',
-'729',
-'731',
-'735',
-'737',
-'739',
-'741',
-'743',
-'745',
-'747',
-'749',
-'761',
-'827',
-'829',
-'839',
-'857',
-'859',
-'861',
-'863',
-'865',
-'867',
-'869',
-'871',
-'873',
-'877',
-'879',
-'881',
-'883',
-'885',
-'887',
-'889',
-'891',
-'893',
-'895',
-'899',
-'901',
-'903',
-'905',
-'907',
-'909',
-'911',
-'913',
-'915',
-'917',
-'919',
-'921',
-'923',
-'925',
-'927',
-'929',
-'931',
-'943',
-'947',
-'949',
-'951',
-'955',
-'959',
-'961',
-'963',
-'965',
-'967',
-'969',
-'971',
-'973',
-'975',
-'977',
-'979',
-'981',
-'983',
-'985',
-'987',
-'989',
-'991',
-'993',
-'995',
-'997',
-'999',
-'1001',
-'1003',
-'1005',
-'1007',
-'1009',
-'1011',
-'1013',
-'1015',
-'1017',
-'1019',
-'1021',
-'1023',
-'1081',
-'1083',
-'1085',
-'1091',
-'1095',
-'1097',
-'1143',
-'1145',
-'1147',
-'1149',
-'1151',
-'1153',
-'1155',
-'1169',
-'1171',
-'1173',
-'1175',
-'1177',
-'1179',
-'1191',
-'1193',
-'1195',
-'1197',
-'1199',
-'1209',
-'1211',
-'1213',
-'1215',
-'1217',
-'1219',
-'1221',
-'1223',
-'1225',
-'1227',
-'1229',
-'1231',
-'1233',
-'1235',
-'1237',
-'1239',
-'1241',
-'1243',
-'1245',
-'1247',
-'1249',
-'1251',
-'1253',
-'1287',
-'1289',
-'1291',
-'1293',
-'1295',
-'1297',
-'1299',
-'1301',
-'1303',]
-
 
 def tab():
     gui.PAUSE = 0.25
@@ -301,6 +64,7 @@ def clicar_duas_vezes(posicao):
 
 def exportar():
     gui.hotkey('ctrl', 'shift', 'e')
+
 
 def prgm(sku):
     time.sleep(0.75)
@@ -329,9 +93,6 @@ def prgm(sku):
     print(f'{sku} feito')
 
 
-
-
-
 '''
 for lista in range(1):
     #prgm()
@@ -345,20 +106,15 @@ def teste(sku):
     
 '''
 
-
 # clicar(clicar_na_imagem)
 
-
-for lista in lista_inativos:
+for item in lista:
     # teste(lista)
-    #prgm(lista)
+    prgm(lista)
     pass
 
 print(len(lista_inativos))
 
-
 # print(pasta)
-
 #gui.hotkey('win', 'd')
-
 #gui.hotkey('alt', 'tab')
