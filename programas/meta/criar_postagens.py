@@ -44,16 +44,17 @@ clicar_em_salvar = 1749, 996
 
 # monitor 1360 x 768
 
-clicar_na_imagem = 961, 557
-selecionar_troca_imagem = 1709, 541
-clicar_subs_imagem = 1579, 689
-
-clicar_pasta_sem_fundo = 100, 209
+clicar_na_imagem = 678, 422
+selecionar_troca_imagem = 1143, 545
+clicar_subs_imagem = 1000, 432
+clicar_caminho_da_pasta = 1000, 60
+clicar_nome_do_arquivo = 1000, 700
+# clicar_pasta_sem_fundo = 100, 209
 # fechar_subs_imagem = 1659, 508
-editar_nome_arquivo = 51, 140
-clicar_em_exportar = 1862, 163
+# editar_nome_arquivo = 51, 140
+clicar_em_exportar = 1307, 165
 pasta_post_redes = 80, 187
-clicar_em_salvar = 1749, 996
+# clicar_em_salvar = 1749, 996
 
 
 contador = 0
