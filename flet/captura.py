@@ -1,18 +1,22 @@
 import flet as ft
 import pyautogui
 import time
+import pyinstaller
 
 
 def main(page: ft.Page):
     # page.title = "Captura XY"
     # page.window_bgcolor = ft.colors.TRANSPARENT
     # page.bgcolor = ft.colors.TRANSPARENT
-    # page.window_title_bar_hidden = True
+    page.window_title_bar_hidden = True
     page.window_frameless = True
     page.window_left = 900
     page.window_top = 500
     page.window_width = 110
     page.window_height = 200
+    page.window_always_on_top = True
+    # page.window_movable = True
+    page.window_opacity = 0.5
 
 
     def fechar(e):
