@@ -12,10 +12,10 @@ def main(page: ft.Page):
     page.window_left = 900
     page.window_top = 500
     page.window_width = 300
-    page.window_height = 160
+    page.window_height = 240
     page.window_always_on_top = True
     # page.window_movable = True
-    page.window_opacity = 0.95
+    page.window_opacity = 0.90
 
 
     def fechar(e):
@@ -24,12 +24,14 @@ def main(page: ft.Page):
 
     x = ft.Text(value=f"Iniciando", color="green")
     y = ft.Text(value=f"Iniciando", color="green")
+    sair_btn = ft.ElevatedButton(text="Sair", on_click=fechar)
 
 
     def capturador_1(e):
+        page.controls.remove(txt_informativo)
         page.controls.remove(escolha_btn_1)
         page.controls.remove(escolha_btn_2)
-        page.controls.append(ft.ElevatedButton(text="Sair", on_click=fechar))
+        page.controls.append(sair_btn)
         #page.window_frameless = True
         page.window_title_bar_hidden = True
         page.window_height = 200
@@ -45,13 +47,15 @@ def main(page: ft.Page):
             page.controls.remove(x)
             page.controls.remove(y)
             time.sleep(0.01)
+        page.controls.append(sair_btn)
 
 
 
     def capturador_2(e):
+        page.controls.remove(txt_informativo)
         page.controls.remove(escolha_btn_1)
         page.controls.remove(escolha_btn_2)
-        page.controls.append(ft.ElevatedButton(text="Sair", on_click=fechar))
+        page.controls.append(sair_btn)
         # page.window_frameless = True
         page.window_title_bar_hidden = True
         page.window_height = 120
@@ -63,9 +67,12 @@ def main(page: ft.Page):
             page.update()
             page.controls.remove(t)
             time.sleep(0.01)
+        page.controls.append(sair_btn)
 
 
-
+    txt_informativo = ft.Text(value='Antes de escolher, deixe o programa em um lugar adequado, '
+                           'não poderá mexer depois, apenas se reinicar o programa')
+    page.add(txt_informativo)
     escolha_btn_1 = ft.ElevatedButton(text="Escolha 1", on_click=capturador_1)
     escolha_btn_2 = ft.ElevatedButton(text="Escolha 2", on_click=capturador_2)
 
