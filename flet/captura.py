@@ -1,22 +1,21 @@
 import flet as ft
 import pyautogui
 import time
-import pyinstaller
 
 
 def main(page: ft.Page):
-    # page.title = "Captura XY"
+    page.title = "Captura XY"
     # page.window_bgcolor = ft.colors.TRANSPARENT
     # page.bgcolor = ft.colors.TRANSPARENT
-    page.window_title_bar_hidden = True
-    page.window_frameless = True
+    page.window_title_bar_hidden = False
+    page.window_frameless = False
     page.window_left = 900
     page.window_top = 500
-    page.window_width = 110
-    page.window_height = 200
+    page.window_width = 300
+    page.window_height = 160
     page.window_always_on_top = True
     # page.window_movable = True
-    page.window_opacity = 0.5
+    page.window_opacity = 0.95
 
 
     def fechar(e):
@@ -31,6 +30,11 @@ def main(page: ft.Page):
         page.controls.remove(escolha_btn_1)
         page.controls.remove(escolha_btn_2)
         page.controls.append(ft.ElevatedButton(text="Sair", on_click=fechar))
+        #page.window_frameless = True
+        page.window_title_bar_hidden = True
+        page.window_height = 200
+        page.window_width = 110
+
 
         for i in range(0, 60000):
             x = ft.TextField(label='X', value=f'{pyautogui.position()[0]}', width=100)
@@ -48,7 +52,10 @@ def main(page: ft.Page):
         page.controls.remove(escolha_btn_1)
         page.controls.remove(escolha_btn_2)
         page.controls.append(ft.ElevatedButton(text="Sair", on_click=fechar))
-        page.window_height = 100
+        # page.window_frameless = True
+        page.window_title_bar_hidden = True
+        page.window_height = 120
+        page.window_width = 110
 
         for i in range(0, 60000):
             t = ft.Text(value=f"Posição \nX {pyautogui.position()[0]} Y {pyautogui.position()[1]}", color="green")
