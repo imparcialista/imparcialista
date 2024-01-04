@@ -11,21 +11,25 @@ extensao_arquivo = {
     '.png': 'Extensão Png'
     }
 
-pasta_origem = askdirectory(title='Pasta origem')
-pasta_destino = askdirectory(title='Pasta destino')
+pasta_origem = askdirectory(title='Pasta de origem')
+pasta_destino = askdirectory(title='Pasta de destino')
+lista_arquivos = os.listdir(pasta_origem)
 lista_append = []
 
-lista_arquivos = os.listdir(pasta_origem)
 # print(lista_arquivos) # listar itens da pasta de origem
 
 for nome_arquivo in lista_arquivos:
     for chave in extensao_arquivo.keys():
         if chave in nome_arquivo:
             lista_append.append(nome_arquivo)
-            #print(lista_append)
+            # print(lista_append)
 
-print(lista_append)
+# print(lista_append)
 
+lista = lista_append
+
+'''
+# monitor 1920 x 1080 
 
 clicar_na_imagem = 961, 557
 selecionar_troca_imagem = 1709, 541
@@ -36,10 +40,25 @@ editar_nome_arquivo = 51, 140
 clicar_em_exportar = 1862, 163
 pasta_post_redes = 80, 187
 clicar_em_salvar = 1749, 996
+'''
+
+# monitor 1360 x 768
+
+clicar_na_imagem = 961, 557
+selecionar_troca_imagem = 1709, 541
+clicar_subs_imagem = 1579, 689
+
+clicar_pasta_sem_fundo = 100, 209
+# fechar_subs_imagem = 1659, 508
+editar_nome_arquivo = 51, 140
+clicar_em_exportar = 1862, 163
+pasta_post_redes = 80, 187
+clicar_em_salvar = 1749, 996
+
 
 contador = 0
 gui.PAUSE = 1
-# gui.alert('O progama foi inciado, solte o mouse e teclado')
+gui.alert('O progama foi inciado, solte o mouse e teclado')
 time.sleep(1)
 
 def tab():
@@ -94,13 +113,15 @@ def prgm(sku):
 
 
 '''
+
 for lista in range(1):
     #prgm()
     contador = contador + 1
     #gui.alert('{} atualizados'.format(contador))
     print('{} atualizados'.format(contador))
     
-    
+'''
+
 def teste(sku):
     print(f'{sku} feito')
 
@@ -109,14 +130,16 @@ def teste(sku):
 
 
 for item in lista:
-    # teste(lista)
-    prgm(lista)
+    # teste(lista[0])
+    # prgm(lista)
+    print(item)
     pass
 
-print(len(lista_inativos))
+# print(len(lista_inativos))
 
+clicar(clicar_na_imagem)
+clicar(selecionar_troca_imagem)
 
 # print(pasta)
 #gui.hotkey('win', 'd')
 #gui.hotkey('alt', 'tab')
-'''
