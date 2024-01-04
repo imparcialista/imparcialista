@@ -39,7 +39,7 @@ clicar_em_salvar = 1749, 996
 
 contador = 0
 gui.PAUSE = 1
-gui.alert('O progama foi inciado, solte o mouse e teclado')
+# gui.alert('O progama foi inciado, solte o mouse e teclado')
 time.sleep(1)
 
 def tab():
@@ -103,10 +103,10 @@ for lista in range(1):
     
 def teste(sku):
     print(f'{sku} feito')
-    
-'''
+
 
 # clicar(clicar_na_imagem)
+
 
 for item in lista:
     # teste(lista)
@@ -115,6 +115,8 @@ for item in lista:
 
 print(len(lista_inativos))
 
+
 # print(pasta)
 #gui.hotkey('win', 'd')
 #gui.hotkey('alt', 'tab')
+'''
