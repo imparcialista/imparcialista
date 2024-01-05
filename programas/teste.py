@@ -1,314 +1,136 @@
+from tkinter.filedialog import askdirectory
+import pyautogui as gui
+import time
+import os
 
-lista_todos = [
-    '1321',
-    '1331',
-    '1329',
-    '1327',
-    '1325',
-    '1323',
-    '1319',
-    '960',
-    '1313',
-    '1311',
-    '1307',
-    '1309',
-    '1303',
-    '1301',
-    '1299',
-    '1297',
-    '1295',
-    '1293',
-    '1291',
-    '1289',
-    '1287',
-    '1283',
-    '1281',
-    '1285',
-    '1279',
-    '1277',
-    '1275',
-    '1273',
-    '1271',
-    '1255',
-    '1257',
-    '1253',
-    '1251',
-    '1249',
-    '1247',
-    '1243',
-    '1241',
-    '1239',
-    '1231',
-    '1229',
-    '1227',
-    '1225',
-    '1223',
-    '1221',
-    '1219',
-    '1217',
-    '1233',
-    '1235',
-    '1237',
-    '1211',
-    '1215',
-    '1209',
-    '1203',
-    '1201',
-    '1205',
-    '1207',
-    '1213',
-    '1197',
-    '1195',
-    '1193',
-    '1199',
-    '1191',
-    '1185',
-    '1179',
-    '1177',
-    '1175',
-    '1173',
-    '1167',
-    '1171',
-    '1169',
-    '1165',
-    '1163',
-    '1161',
-    '1159',
-    '1109',
-    '941',
-    '1105',
-    '1107',
-    '1101',
-    '1099',
-    '1141',
-    '1157',
-    '1155',
-    '1153',
-    '1151',
-    '1147',
-    '1149',
-    '1145',
-    '1143',
-    '1091',
-    '1093',
-    '1095',
-    '1097',
-    '1085',
-    '1083',
-    '999',
-    '997',
-    '995',
-    '1023',
-    '1021',
-    '1019',
-    '1017',
-    '1015',
-    '1013',
-    '1011',
-    '1009',
-    '1007',
-    '1005',
-    '1003',
-    '1001',
-    '981',
-    '983',
-    '985',
-    '989',
-    '987',
-    '991',
-    '993',
-    '963',
-    '967',
-    '969',
-    '965',
-    '979',
-    '975',
-    '977',
-    '971',
-    '973',
-    '961',
-    '959',
-    '955',
-    '951',
-    '949',
-    '943',
-    '939',
-    '937',
-    '935',
-    '933',
-    '903',
-    '929',
-    '927',
-    '925',
-    '923',
-    '921',
-    '919',
-    '917',
-    '915',
-    '913',
-    '911',
-    '909',
-    '907',
-    '905',
-    '931',
-    '901',
-    '875',
-    '895',
-    '893',
-    '873',
-    '877',
-    '887',
-    '879',
-    '889',
-    '891',
-    '883',
-    '881',
-    '885',
-    '857',
-    '859',
-    '861',
-    '863',
-    '865',
-    '867',
-    '869',
-    '871',
-    '899',
-    '829',
-    '827',
-    '821',
-    '819',
-    '839',
-    '749',
-    '745',
-    '747',
-    '741',
-    '739',
-    '743',
-    '737',
-    '761',
-    '733',
-    '731',
-    '729',
-    '727',
-    '723',
-    '725',
-    '721',
-    '707',
-    '703',
-    '735',
-    '669',
-    '523',
-    '525',
-    '527',
-    '521',
-    '87',
-    '85',
-    '79',
-    '83',
-    '81',
-    '331',
-    '333',
-    '375',
-    '377',
-    '632',
-    '387',
-    '389',
-    '391',
-    '395',
-    '397',
-    '399',
-    '614',
-    '616',
-    '618',
-    '620',
-    '630',
-    '622',
-    '626',
-    '624',
-    '628',
-    '598',
-    '604',
-    '602',
-    '600',
-    '606',
-    '612',
-    '610',
-    '608',
-    '596',
-    '594',
-    '592',
-    '507',
-    '570',
-    '568',
-    '566',
-    '562',
-    '554',
-    '1245',
-    '34',
-    '538',
-    '534',
-    '532',
-    '530',
-    '528',
-    '499',
-    '497',
-    '518',
-    '524',
-    '512',
-    '510',
-    '526',
-    '500',
-    '493',
-    '491',
-    '481',
-    '485',
-    '483',
-    '477',
-    '475',
-    '473',
-    '469',
-    '467',
-    '457',
-    '455',
-    '453',
-    '451',
-    '443',
-    '353',
-    '429',
-    '125',
-    '123',
-    '425',
-    '431',
-    '415',
-    '413',
-    '105',
-    '383',
-    '381',
-    '379',
-    '329',
-    '373',
-    '371',
-    '369',
-    '367',
-    '342',
-    '327',
-    '335',
-    '337',
-    '325',
-    '323',
-    '197',
-    '195',
-    '48',
-    '115',
-    '58',
-    '60',
-    '68',
-    '77',
-    '72',
-    '101',
-]
+# gui.FAILSAFE = True
 
-lista_com_foto = []
+extensao_arquivo = {
+    '.png': 'Extensão Png'
+    }
 
-lista_sem_foto = []
+pasta_origem = askdirectory(title='Pasta de origem')
+lista_arquivos = os.listdir(pasta_origem)
+lista = []
 
+for nome_arquivo in lista_arquivos:
+    for chave in extensao_arquivo.keys():
+        if chave in nome_arquivo:
+            lista.append(nome_arquivo)
+
+print(lista)
+
+'''
+# print(lista)
+lista_imagem_gerada = []
+lista_nao_feitos = []
+lista_feitos = []
+
+for item in lista:
+    if item in lista_imagem_gerada:
+        lista_feitos.append(item)
+    else:
+        lista_nao_feitos.append(item)
+
+lista = []
+lista = lista_nao_feitos
+'''
+
+# monitor 1360 x 768
+buscar_sku = 547, 218
+produto = 415, 344
+aba_imagens = 154, 545
+adicionar_arquivos = 552, 690
+clicar_em_anexar = 923, 354
+salvar_produto = 1011, 236
+
+
+def esperar(tempo):
+    time.sleep(tempo)
+
+
+def tab():
+    gui.PAUSE = 0.25
+    gui.press('tab')
+    gui.PAUSE = 1
+
+
+def clicar(posicao):
+    gui.PAUSE = 0.25
+    gui.moveTo(posicao)
+    gui.click(posicao)
+    gui.PAUSE = 1
+
+
+def clicar_duas_vezes(posicao):
+    gui.PAUSE = 0.25
+    gui.moveTo(posicao)
+    gui.doubleClick(posicao)
+    gui.PAUSE = 1
+
+
+# comando do figma
+def exportar():
+    gui.hotkey('ctrl', 'shift', 'e')
+
+
+def enter():
+    gui.press('enter')
+
+
+def ir_para_pasta(caminho):
+    clicar(clicar_caminho_da_pasta)
+    time.sleep(0.5)
+    gui.write(caminho)
+    enter()
+    time.sleep(0.75)
+
+
+def apagar(vezes):
+    gui.press('backspace', presses=vezes)
+
+
+def deletar(vezes):
+    gui.press('delete', presses=vezes)
+
+
+def escrever(texto):
+    gui.write(f'{texto}')
+
+
+def esc():
+    gui.press('esc')
+
+def programa(sku):
+    gui.PAUSE = 0.5
+    clicar(buscar_sku)
+    enter()
+    esperar(1.5)
+    clicar(produto)
+    esperar(1.5)
+    clicar(aba_imagens)
+    clicar(adicionar_arquivos)
+    esperar(1)
+    escrever(f'{sku}')
+    enter()
+    esperar(1)
+    clicar(clicar_em_anexar)
+    esperar(0.5)
+    esc()
+    clicar(salvar_produto)
+    esperar(2)
+    print(f'{sku} feito')
+
+
+contador = 0
+gui.PAUSE = 1
+gui.alert('O progama foi inciado, solte o mouse e o teclado')
+time.sleep(5)
+
+for item in lista:
+    programa(item)
+    contador += 1
+    # print(f'SKU-{item}')
+    # print(item)
+
+print(f'{contador} itens feitos')
