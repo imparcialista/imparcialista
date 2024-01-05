@@ -101,9 +101,41 @@ def escrever(texto):
 def esc():
     gui.press('esc')
 
+
+def selecionar_tudo():
+    gui.hotkey('ctrl', 'a')
+
+
+def colar():
+    gui.hotkey('ctrl', 'v')
+
+lista_nova = []
+for item in lista:
+    lista_nova.append(item.split('-'))
+
+lista_nova_2 = []
+for prefixo, nome in lista_nova:
+    lista_nova_2.append(nome)
+
+lista_nova = []
+for item in lista_nova_2:
+    lista_nova.append(item.split('.'))
+
+
+lista_skus = []
+for nome, sufixo in lista_nova:
+    lista_skus.append(nome)
+
+
+print(lista_skus)
+
+
 def programa(sku):
     gui.PAUSE = 0.5
     clicar(buscar_sku)
+    selecionar_tudo()
+    #sku.split()
+    colar()
     enter()
     esperar(1.5)
     clicar(produto)
