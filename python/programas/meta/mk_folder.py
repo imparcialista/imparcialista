@@ -26,6 +26,7 @@ def tratrar_sku(sku):
 
 
 def contagem(valor):
+
     for indice in range(valor, (valor + 4)):
         texto = str(list_products[indice])
         pyperclip.copy(texto)
