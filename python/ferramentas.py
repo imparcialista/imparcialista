@@ -5,6 +5,14 @@ import time
 import sys
 
 
+def escrever(texto):
+    gui.write(f'{texto}')
+
+
+def esperar(tempo):
+    time.sleep(tempo)
+
+
 def selecionar_pasta(titulo):
     return askdirectory(title=f'{titulo}')
 
