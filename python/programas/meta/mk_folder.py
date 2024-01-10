@@ -60,6 +60,7 @@ def escrever_as_informacoes():
                                  title='Quantidade de itens por linha',
                                  default='4')
 
+
     itens_por_linha = int(itens_por_linha)
     print('--------Descrição---------')
     pausa(5,
@@ -112,7 +113,9 @@ def programa_trocar_fotos():
 
     pausa(1,
           'Selecione a pasta com as imagens sem fundo')
+
     pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
+
     print('--------Imagens---------')
     pausa(5,
           'Clique na primeira imagem no figma para a imagem ser alterada')
