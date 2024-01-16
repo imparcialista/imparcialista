@@ -1,5 +1,5 @@
 from python.ferramentas import *
-
+'''
 itens_por_linha = gui.prompt(text='São quantos itens por linha?',
                              title='Quantidade de itens por linha',
                              default='4')
@@ -39,3 +39,4 @@ print(copiar_preco == copiar_preco_2)
 
 print(copiar_preco_3)
 print(type(copiar_preco_3))
+'''

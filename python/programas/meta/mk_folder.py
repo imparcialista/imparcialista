@@ -36,8 +36,8 @@ copiar_preco = confirmar('Copiar coluna de preço?',
                          'Coluna preço',
                          'Sim', 'Não')
 
-pausa(5,
-      'Deseja pausar o programa?')
+# pausa(5,
+#       'Deseja pausar o programa?')
 
 for i in range(linhas_para_copiar):
     copiar()
@@ -70,7 +70,6 @@ pausa(5,
 
 def contagem(valor):
     for indice in range(valor, (valor + 4)):
-    # for indice in range(valor, (valor + 5)):
         texto = str(descricao_dos_produtos[indice])
         pyperclip.copy(texto)
         gui.PAUSE = 0.25
@@ -78,7 +77,6 @@ def contagem(valor):
         tab()
 
     for indice in range(valor, (valor + 4)):
-    # for indice in range(valor, (valor + 5)):
         valor_preco = str(preco_dos_produtos[indice])
         pyperclip.copy(valor_preco)
         gui.PAUSE = 0.25
