@@ -1,4 +1,5 @@
 from python.ferramentas import *
+from ignorar import link_zx
 
 '''
     O programa vai precisar de uma pasta com as imagens já feitas e o nome de cada imagem, a descrição para a
@@ -32,7 +33,7 @@ pausa(1,
 
 pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
 
-link  = f'{1 + 1}'
+link  = link_zx
 
 
 def abrir_pagina(site):

@@ -77,6 +77,7 @@ def pausa(tempo, mensagem):
     teste = gui.confirm(f'{mensagem}',
                         'Programa LRC',
                         buttons=['Prosseguir', 'Parar'])
+
     if teste == 'Parar':
         alerta('Fim do programa',
                'O programa foi parado com sucesso')
@@ -84,3 +85,26 @@ def pausa(tempo, mensagem):
 
     time.sleep(tempo)
 
+
+def entrada_usuario(texto, titulo, valor_padrao):
+    entrada = gui.prompt(text=f'{texto}',
+               title=f'{titulo}',
+               default=f'{valor_padrao}')
+    return entrada
+
+def confirmar(texto, titulo, botao_1, botao_2):
+    escolha = gui.confirm(texto,
+                titulo,
+                buttons = [botao_1, botao_2])
+    return escolha
+
+def confirmar_verdadeiro_ou_falso(texto, titulo, botao_1, botao_2):
+    escolha = gui.confirm(texto,
+                titulo,
+                buttons = [botao_1, botao_2])
+    if escolha == botao_1:
+        escolha = True
+    else:
+        escolha = False
+
+    return escolha
