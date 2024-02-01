@@ -20,9 +20,15 @@
         <main class="apre">
             <section class="apre__conteudo">
                 <h1 class="apre__conteudo__titulo">
-                    Me siga no GitHub
+                    Aqui está seu código<br />
                     <strong class="destaque-no-titulo"
-                        >com um Front-end de qualidade!</strong
+                        ><script>
+                            const pagina = document.URL;
+                            resultado = pagina.split(
+                                "https://imparcialista.github.io/imparcialista/sites/?code="
+                            );
+                            document.write(resultado[1]);
+                        </script></strong
                     >
                 </h1>
                 <p class="apre__conteudo__texto">
@@ -35,7 +41,7 @@
                 <p>
                     Seu código é<br /><b>
                         <script>
-                            const pagina = document.URL;
+                            const pagina2 = document.URL;
                             resultado = pagina.split(
                                 "https://imparcialista.github.io/imparcialista/sites/?code="
                             );
