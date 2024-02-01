@@ -44,6 +44,7 @@ body {
 
 .destaque-no-titulo {
     color: var(--cor-destaque-secundaria-hover);
+    font-size: 1.25rem;
 }
 
 strong {
