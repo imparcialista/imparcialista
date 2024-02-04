@@ -141,11 +141,6 @@ lista_sem_paridade = [
 '1015 MATRIZ',
 '1013 MATRIZ',
 '1011 MATRIZ',
-'1009 MATRIZ',
-'1007 MATRIZ',
-'1005 MATRIZ',
-'1003 MATRIZ',
-'1001 MATRIZ',
 '981 MATRIZ',
 '983 MATRIZ',
 '985 MATRIZ',
@@ -453,7 +448,7 @@ lista_nao_matriz = []
 
 for item in lista_skus:
     if item in lista_sem_paridade:
-        # print(f'NÃO MATRIZ {item}')
+        #  print(f"NÃO MATRIZ {item}")
         lista_nao_matriz.append(item)
     else:
         # print(f'MATRIZ {item}')
