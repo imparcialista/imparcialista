@@ -44,7 +44,7 @@ body {
 }
 
 #rodape {
-    position: absolute;
+    position: relative;
     bottom: 0;
     height: 1rem; /* altura do rodapé */
 }
