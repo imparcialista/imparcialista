@@ -32,6 +32,7 @@ body {
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria);
     font-family: var(--fonte-primaria);
+    min-height: 100%;
 }
 
 .destaque-no-titulo {
@@ -40,7 +41,7 @@ body {
 
 .destaque-no-titulo-mlb {
     color: var(--cor-destaque-secundaria-hover);
-    font-size: 1.25rem;
+    font-size: 20px;
 }
 
 strong {
@@ -53,20 +54,21 @@ a {
 }
 
 .cabecalho {
-    padding: 1% 10%;
+    padding: 0.75rem 10rem;
+
     background-color: var(--cor-azul-lrc);
     color: #f5f5f5;
 }
 
 .cabecalho__menu {
     display: flex;
-    gap: 5rem;
+    gap: 80px;
 }
 
 .cabecalho__menu_link {
     font-family: var(--fonte-secundaria);
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 
 .cabecalho__menu_link:hover {
@@ -79,12 +81,14 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    height: auto;
+    min-height: 100%;
 }
 
 .apre__sobre {
     margin: 5% 15%;
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
     gap: 2rem;
 }
@@ -109,7 +113,7 @@ a {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .apre__links__subtitulo {
@@ -121,7 +125,7 @@ a {
     background-color: var(--cor-primaria);
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 16px;
     width: 40%;
     text-align: center;
     border-radius: 1.25rem;
@@ -139,14 +143,10 @@ a {
 
 .apre__imagem {
     width: 50%;
-    border-radius: 32px;
+    border-radius: 2rem;
 }
 
 @media (max-width: 1200px) {
-    .cabecalho {
-        padding: 10%;
-    }
-
     .cabecalho__menu {
         justify-content: center;
     }
@@ -160,13 +160,20 @@ a {
         flex-direction: column;
         padding: 5%;
     }
+
     .apre__conteudo {
         width: auto;
+        height: auto;
+    }
+
+    .apre__imagem {
+        width: 50%;
+        border-radius: 2rem;
     }
 }
 
 .lista__link li {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .lista__link a {
@@ -177,12 +184,35 @@ a {
     font-weight: 700;
 }
 
+.lista__link__certificado {
+    font-weight: 300;
+}
+
+.lista__link__certificado li {
+    text-transform: lowercase;
+    padding: 7px 0px;
+}
+
+.lista__link__certificado a {
+    text-decoration: none;
+    color: var(--cor-destaque);
+    font-weight: 500;
+}
+
+.lista__link__certificado a:hover {
+    color: var(--botao-azul);
+}
+
 .lista__link a:hover {
     color: var(--botao-azul);
 }
 
 .lista__link a:active {
     color: var(--botao-azul-25ma);
+}
+
+h2 {
+    color: var(--cor-destaque-secundaria);
 }
 
 /* Rodapé Imparcialista */
@@ -197,7 +227,9 @@ a {
     color: #0a0a0a;
     background-color: #f5f5f5;
     text-align: center;
-    font-size: 1rem;
+    font-size: 16px;
+
+    bottom: 0;
 }
 
 .rodape__imparcialista a {
