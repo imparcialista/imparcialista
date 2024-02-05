@@ -1,13 +1,24 @@
 from python.ferramentas import *
-from ignorar import link_zx
+from ignorar2 import link_zx
 
 '''
     O programa vai precisar de uma pasta com as imagens já feitas e o nome de cada imagem, a descrição para a
     postagem, e a data para agendamento 
 '''
 
+gui.FAILSAFE = True
 
-linhas = 1
+def encontrar_imagem(imagem):
+    time.sleep(0.25)
+    while not gui.locateOnScreen(imagem, confidence=0.8):  # reconhecimento de imagem
+        print(f'nao encontrou {imagem}')
+        time.sleep(1)
+    encontrou = gui.locateOnScreen(imagem, confidence=0.8)
+    print(f'encontrou {imagem}')
+    return encontrou
+
+
+linhas = 8
 contador = 0
 gui.PAUSE = 0.15
 
@@ -26,15 +37,17 @@ descer_pagina = 618, 665
 opcao_programar = 357, 623
 selecionar_data = 297, 498
 botao_programar = 540, 713
+pasta = r'D:\Organizar\Tudo\A Pasta Geral\arrumar\ETP1 LUCAS\imagens\sem_fundo\0-outros\2024-POSTS'
+
 
 inicio = time.time()
-pausa(1,
-      'Selecione a pasta com as imagens')
+# pausa(1,
+#       'Selecione a pasta com as fotos para postar')
 
-pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
+# pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
+pasta_com_fotos = pasta
 
 link  = link_zx
-
 
 def abrir_pagina(site):
     pyperclip.copy(f'{site}')
@@ -43,7 +56,6 @@ def abrir_pagina(site):
     gui.hotkey('ctrl', 'v')
     esperar(0.25)
     enter()
-    esperar(10)
 
 
 def fechar_pagina():
@@ -60,60 +72,63 @@ for i in range(linhas):
     lista_descricao.append(copiar_e_colar())
     gui.press('right')
     lista_arquivo.append(copiar_e_colar())
-
     gui.press('home')
     gui.press('down')
 
-pausa(3,
-      'Os valores foram copiados, agora deixe o programa programar as postagens')
+# pausa(3,
+#       'Os valores foram copiados, agora deixe o programa programar as postagens')
+
+def encontrar_e_clicar(imagem):
+    encontrou = encontrar_imagem(imagem)
+    clicar(encontrou)
+
+
+def centro(posicoes_imagem):
+    return (posicoes_imagem[0] + posicoes_imagem[2]/2), (posicoes_imagem[1] + posicoes_imagem[3]/2)
+
 
 for linha in range(linhas):
-    gui.PAUSE = 1
+    gui.PAUSE = 0.25
     abrir_pagina(link)
-    clicar(fb_lista)
-    clicar(ig_lista)
-    clicar(descricao)
+    encontrar_e_clicar('add-foto.png')
+    esperar(0.5)
+    encontrar_e_clicar('add-foto-desktop.png')
+    esperar(1)
+    ir_para_pasta(clicar_caminho_da_pasta, pasta_com_fotos)
+    esperar(1)
+    encontrar_e_clicar('nome-arquivo-pasta.png')
+    escrever(f'LRC-{lista_arquivo[linha]}')
+    esperar(0.5)
+    encontrar_e_clicar('botao-abrir-pasta.png')
+    encontrar_e_clicar('descer-pagina.png')
+    encontrar_e_clicar('descricao-fb.png')
     esperar(1)
     texto = pyperclip.copy(lista_descricao[linha])
     gui.hotkey('ctrl', 'v')
-    esperar(2)
+    esperar(0.25)
     gui.press('space')
-    clicar(adicionar_foto)
+    encontrar_e_clicar('botao-agendar.png')
     esperar(0.5)
-    clicar(carregar_do_computador)
-    esperar(0.5)
-    ir_para_pasta(clicar_caminho_da_pasta, pasta_com_fotos)
-    esperar(1)
-    clicar(clicar_nome_do_arquivo)
-    esperar(0.5)
-    escrever(f'LRC-{lista_arquivo[linha]}')
-    esperar(0.5)
-    gui.hotkey('alt', 'a')
-    esperar(0.5)
-    clicar(descer_pagina)
-    esperar(0.5)
-    clicar(opcao_programar)
-    esperar(0.5)
-    clicar(descer_pagina)
-    esperar(0.5)
-    clicar(selecionar_data)
-    esperar(1)
+    tab()
 
     for i in range(2):
         gui.hotkey('ctrl', 'a')
         gui.press('backspace')
         escrever(lista_data[linha])
-        esperar(2)
+        esperar(0.5)
         tab()
-        gui.press('1', 2)
+        gui.press('1')
+        esperar(0.5)
+        gui.press('2')
         tab()
         gui.press('0')
         tab()
-        gui.press('a')
         tab()
 
-    clicar(botao_programar)
-    esperar(8)
+    # clicar(botao_programar)
+    encontrar_e_clicar('botao-programar.png')
+    esperar(5)
+    encontrar_imagem('publicou.png')
     fechar_pagina()
 
 fim = time.time()
