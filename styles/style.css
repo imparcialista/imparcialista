@@ -69,7 +69,6 @@ a {
 
 .cabecalho {
     padding: 0.75rem 10rem;
-
     background-color: var(--cor-azul-lrc);
     color: #f5f5f5;
 }
@@ -130,6 +129,19 @@ a {
     gap: 16px;
 }
 
+.apre__links__whats {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.apre__links__whats img {
+    width: 2rem;
+    height: 2rem;
+}
+
 .apre__links__subtitulo {
     font-family: var(--fonte-secundaria);
     font-weight: 500;
@@ -155,6 +167,23 @@ a {
     background-color: #baefff;
 }
 
+.botao__whatsapp {
+    background-color: var(--cor-primaria);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    text-align: center;
+    border-radius: 1.25rem;
+    font-size: 1.5rem;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    width: 100%;
+}
+
 .apre__imagem {
     width: 50%;
     border-radius: 2rem;
@@ -163,6 +192,10 @@ a {
 @media (max-width: 1200px) {
     .cabecalho__menu {
         justify-content: center;
+    }
+    .planos__precos {
+        flex-direction: column;
+        padding: 0.5rem;
     }
 
     .apre {
@@ -281,8 +314,24 @@ h2 {
 .espaco {
     justify-content: space-between;
     display: flex;
+    color: var(--cor-primaria);
 }
 
+.texto__plano {
+    background-color: var(--cor-azul-lrc);
+    padding: 2rem;
+    border-radius: 0px 0px 2rem 2rem;
+}
+
+.titulo__plano {
+    background-color: var(--cor-azul-lrc);
+    padding: 2rem 2rem 0px 2rem;
+    border-radius: 2rem 2rem 0px 0px;
+}
+
+.titulo__secundario {
+    color: var(--cor-primaria);
+}
 .planos__precos {
     justify-content: space-between;
     display: flex;
@@ -291,19 +340,22 @@ h2 {
 }
 
 .apre__conteudo__precos {
-    display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+.texto__informativo {
+    padding: 2rem 1rem;
+    font-size: 1.25rem;
+}
+
 .apre__precos {
-    margin: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     height: auto;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .apre__conteudo__texto__precos {
