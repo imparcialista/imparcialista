@@ -327,7 +327,7 @@ h2 {
     background-color: var(--cor-azul-lrc);
     padding: 2rem;
     border-radius: 0px 0px 2rem 2rem;
-    text-transform: capitalize;
+    text-transform: initial;
 }
 
 .titulo__plano {
