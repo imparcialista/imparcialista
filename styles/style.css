@@ -198,6 +198,11 @@ a {
         padding: 0.5rem;
     }
 
+    .texto__informativo {
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+
     .apre {
         flex-direction: column-reverse;
         padding: 5%;
@@ -345,7 +350,7 @@ h2 {
 }
 
 .texto__informativo {
-    padding: 2rem 1rem;
+    padding: 1rem 10rem;
     font-size: 1.25rem;
 }
 
