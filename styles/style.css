@@ -327,6 +327,7 @@ h2 {
     background-color: var(--cor-azul-lrc);
     padding: 2rem;
     border-radius: 0px 0px 2rem 2rem;
+    text-transform: capitalize;
 }
 
 .titulo__plano {
@@ -341,7 +342,7 @@ h2 {
 .planos__precos {
     justify-content: space-between;
     display: flex;
-    gap: 5rem;
+    gap: 2rem;
     padding: 1rem;
 }
 
