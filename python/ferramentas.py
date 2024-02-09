@@ -9,6 +9,32 @@ def escrever(texto):
     gui.write(f'{texto}')
 
 
+def apenas_encontrar_imagem(imagem, confianca):
+    for i in range(5):
+        gui.locateOnScreen(imagem, confidence=confianca)  # reconhecimento de imagem
+        print(f'nao encontrou {imagem}')
+        encontrou = gui.locateOnScreen(imagem, confidence=confianca)
+        if encontrou:
+            print(f'encontrou {imagem}')
+            return encontrou
+
+
+
+def encontrar_imagem(imagem, confianca):
+    time.sleep(0.25)
+    while not gui.locateOnScreen(imagem, confidence=confianca):  # reconhecimento de imagem
+        print(f'nao encontrou {imagem}')
+        time.sleep(1)
+    encontrou = gui.locateOnScreen(imagem, confidence=confianca)
+    print(f'encontrou {imagem}')
+    return encontrou
+
+
+def encontrar_e_clicar(imagem, confianca):
+    encontrou = encontrar_imagem(imagem, confianca)
+    clicar(encontrou)
+
+
 def esperar(tempo):
     time.sleep(tempo)
 

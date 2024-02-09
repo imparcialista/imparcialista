@@ -17,7 +17,6 @@ clicar_subs_imagem_catalogo = 995, 432
 clicar_caminho_da_pasta = 1000, 60
 clicar_nome_do_arquivo = 1000, 700
 
-
 def tratrar_sku(codigo_sku):
     sku_tratado = [codigo_sku.split(' ')]
     lista.append(sku_tratado[0][0])
@@ -113,9 +112,12 @@ contagem(12)
 
 
 def trocar_a_foto(codigo_sku):
+    credibilidade = 0.5
     gui.PAUSE = 1
     clicar(selecionar_troca_imagem)
+    # encontrar_e_clicar('image.png', credibilidade)
     clicar(clicar_subs_imagem)
+    # encontrar_e_clicar('image2.png', credibilidade)
     time.sleep(1)
     ir_para_pasta(clicar_caminho_da_pasta, pasta_com_fotos)
     time.sleep(1)
