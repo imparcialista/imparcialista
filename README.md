@@ -10,9 +10,12 @@ Me siga!
 <img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UC2vF0_RY5Bqk-tMUJDokHNA?label=Seguidores"> <img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UC2vF0_RY5Bqk-tMUJDokHNA?label=Visualiza%C3%A7%C3%B5es">
 
 <h2>Meus tutoriais sobre a API do Mercado Livre</h2>
-<a href="https://www.youtube.com/playlist?list=PL2un9yLp42zNa4vI4ZfQiy3ETDenXPe0T">Link da playlist completa</a><br>
+
 
   <ul>
+    <li>
+      <a href="https://www.youtube.com/playlist?list=PL2un9yLp42zNa4vI4ZfQiy3ETDenXPe0T">Link da playlist completa</a>
+    </li>
       <li>
           <a href="https://youtu.be/hBztnbjf0-I">como pegar seus anúncios do Mercado Livre com Python - Até 1000 anúncios</a>
           <p>
