@@ -18,15 +18,19 @@ Me siga!
     </li>
       <li>
           <a href="https://youtu.be/hBztnbjf0-I">como pegar seus anúncios do Mercado Livre com Python - Até 1000 anúncios</a>
+          <p>Vídeo | 10:52</p>
       </li>
       <li>
           <a href="https://youtu.be/B8XP-5wwmBs">como pegar o Refresh Token automaticamente da API Mercado Livre</a>
+          <p>Vídeo | 7:22</p>
       </li>
       <li>
           <a href="https://youtu.be/l4qpOFXlCmA">Como pegar o access token do mercado livre</a>
+          <p>Vídeo | 2:39</p>
       </li>
       <li>
           <a href="https://youtu.be/y_Bo9dzVmv0">Como obter o access token da API do Mercado Livre?</a>
+          <p>Vídeo | 18:33</p>
           </p>
       </li>
   </ul>
