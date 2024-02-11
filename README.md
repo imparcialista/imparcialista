@@ -18,34 +18,15 @@ Me siga!
     </li>
       <li>
           <a href="https://youtu.be/hBztnbjf0-I">como pegar seus anúncios do Mercado Livre com Python - Até 1000 anúncios</a>
-          <p>
-              Caso tenham dúvidas podem me perguntar, percebi só depois que minha explicação não foi das melhores, a cada vídeo procuro melhorar, obrigado pelo feedback de vocês! 
-              <p >Vídeo | 10:52</p>
-          </p>
       </li>
       <li>
           <a href="https://youtu.be/B8XP-5wwmBs">como pegar o Refresh Token automaticamente da API Mercado Livre</a>
-          <p>
-              Conforme prometido, o vídeo onde ensino como automatizar o processo dos vídeos anteriores, assim nós não precisamos mais fazer as solicitações manualmente
-              <p >Vídeo | 7:22</p>
-          </p>
       </li>
       <li>
           <a href="https://youtu.be/l4qpOFXlCmA">Como pegar o access token do mercado livre</a>
-          <p>
-              Como obter em menos de 3 minutos, vídeo direto ao
-              ponto, sem nenhuma explicação aprofundada
-          </p>
-          <p >Vídeo | 2:39</p>
       </li>
       <li>
           <a href="https://youtu.be/y_Bo9dzVmv0">Como obter o access token da API do Mercado Livre?</a>
-          <p>
-              Vídeo direto ao ponto, explico apenas o necessário
-              sobre como obter e ainda mostro na prática eu
-              atualizando o estoque diretamente via API do Mercado
-              Livre
-              <p >Vídeo | 18:33</p>
           </p>
       </li>
   </ul>
