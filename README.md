@@ -3,10 +3,6 @@
 <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a>
 
 ## Meu canal do Youtube
-Me siga!
-<p align="left">
-<a href="https://www.youtube.com/c/imparcialista" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="imparcialista" height="30" width="40" /></a>
-</p>
 <img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UC2vF0_RY5Bqk-tMUJDokHNA?label=Seguidores"> <img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UC2vF0_RY5Bqk-tMUJDokHNA?label=Visualiza%C3%A7%C3%B5es">
 
 <h2>Meus tutoriais sobre a API do Mercado Livre</h2>
