@@ -1,8 +1,9 @@
 [![GitHub Streak](https://streak-stats.demolab.com?user=imparcialista&theme=dark&hide_border=true&locale=pt_BR&date_format=j%20M%5B%20Y%5D&mode=weekly)](https://git.io/streak-stats)
 
 ## Meu canal do Youtube
+Me siga!
 <p align="left">
-#Me siga! <a href="https://www.youtube.com/c/imparcialista" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="imparcialista" height="30" width="40" /></a>
+<a href="https://www.youtube.com/c/imparcialista" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="imparcialista" height="30" width="40" /></a>
 </p>
 <img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UC2vF0_RY5Bqk-tMUJDokHNA?label=Seguidores"> <img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UC2vF0_RY5Bqk-tMUJDokHNA?label=Visualiza%C3%A7%C3%B5es">
 
