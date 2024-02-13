@@ -8,15 +8,13 @@
 
 | Título | Tempo | Vídeo |
 | -------- | -------- | -------- |
+| Playlist completa | --- | <a href="https://www.youtube.com/playlist?list=PL2un9yLp42zNa4vI4ZfQiy3ETDenXPe0T" target="blank">Link</a> |
 | como pegar seus anúncios do Mercado Livre com Python - Até 1000 anúncios | 10:52 | <a href="https://youtu.be/hBztnbjf0-I" target="blank">Link</a> |
 | como pegar o Refresh Token automaticamente da API Mercado Livre | 7:22 | <a href="https://youtu.be/B8XP-5wwmBs" target="blank">Link</a> |
 | Como pegar o access token do mercado livre | 2:39 | <a href="https://youtu.be/l4qpOFXlCmA" target="blank">Link</a> |
 | Como obter o access token da API do Mercado Livre? | 18:33 | <a href="https://youtu.be/y_Bo9dzVmv0" target="blank">Link</a> |
 
-## Playlist completa
-  <li>
-    <a href="https://www.youtube.com/playlist?list=PL2un9yLp42zNa4vI4ZfQiy3ETDenXPe0T">Acesse aqui</a>
-  </li>
+
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=imparcialista&theme=dark&hide_border=true&locale=pt_BR&date_format=j%20M%5B%20Y%5D&mode=weekly)](https://git.io/streak-stats)
 
