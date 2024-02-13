@@ -7,21 +7,17 @@
 
 <h2>Meus tutoriais sobre a API do Mercado Livre</h2>
 
-| Teeste | Teste |
-| -------- | -------- |
-| teste | teste |
-| teste | teste |
-| teste | teste |
+| Vídeo | Título | Tempo |
+| -------- | -------- | -------- |
+| <a href="https://youtu.be/hBztnbjf0-I">Link</a> | como pegar seus anúncios do Mercado Livre com Python - Até 1000 anúncios | 10:52 | 
+| Link | teste | teste | 
+| Link | teste | teste | 
 
 
   <ul>
     <li>
       <a href="https://www.youtube.com/playlist?list=PL2un9yLp42zNa4vI4ZfQiy3ETDenXPe0T">Link da playlist completa</a>
     </li>
-      <li>
-          <a href="https://youtu.be/hBztnbjf0-I">como pegar seus anúncios do Mercado Livre com Python - Até 1000 anúncios</a>
-          <p>Vídeo | 10:52</p>
-      </li>
       <li>
           <a href="https://youtu.be/B8XP-5wwmBs">como pegar o Refresh Token automaticamente da API Mercado Livre</a>
           <p>Vídeo | 7:22</p>
