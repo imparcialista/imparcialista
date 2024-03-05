@@ -22,21 +22,24 @@ def tratrar_sku(codigo_sku):
     lista.append(sku_tratado[0][0])
 
 
-pausa(7,
+pausa(3,
       'Clique em prosseguir, e em seguida clique na primeira linha para copiar')
 
-valor_de_linhas = entrada_usuario('Qual a quantidade de linhas para serem copiadas?',
-                'Quantidade de linhas',
-                '16')
+# valor_de_linhas = entrada_usuario('Qual a quantidade de linhas para serem copiadas?',
+#                 'Quantidade de linhas',
+#                 '16')
 
+valor_de_linhas = 16
 linhas_para_copiar = int(valor_de_linhas)
 
-copiar_preco = confirmar('Copiar coluna de preço?',
-                         'Coluna preço',
-                         'Sim', 'Não')
+# copiar_preco = confirmar('Copiar coluna de preço?',
+#                          'Coluna preço',
+#                          'Sim', 'Não')
 
 # pausa(5,
 #       'Deseja pausar o programa?')
+
+copiar_preco = 'Sim'
 
 for i in range(linhas_para_copiar):
     copiar()
@@ -56,10 +59,11 @@ for i in range(linhas_para_copiar):
     gui.press('down')
 
 
-itens_por_linha = entrada_usuario('São quantos itens por linha?',
-                                  'Quantidade de itens por linha',
-                                  '4')
+# itens_por_linha = entrada_usuario('São quantos itens por linha?',
+#                                   'Quantidade de itens por linha',
+#                                   '4')
 
+itens_por_linha = 4
 itens_por_linha = int(itens_por_linha)
 
 print('--------Descrição---------')
@@ -112,30 +116,37 @@ contagem(12)
 
 
 def trocar_a_foto(codigo_sku):
-    credibilidade = 0.5
-    gui.PAUSE = 1
+    gui.PAUSE = 0.5
     clicar(selecionar_troca_imagem)
     # encontrar_e_clicar('image.png', credibilidade)
     clicar(clicar_subs_imagem)
     # encontrar_e_clicar('image2.png', credibilidade)
     time.sleep(1)
-    ir_para_pasta(clicar_caminho_da_pasta, pasta_com_fotos)
-    time.sleep(1)
+
+    if codigo_sku == item_da_lista[0]:
+        clicar(clicar_caminho_da_pasta)
+        caminho = copiar_e_colar()
+        if caminho == pasta_com_fotos:
+            esc()
+        else:
+            ir_para_pasta(clicar_caminho_da_pasta, pasta_com_fotos)
+        time.sleep(0.5)
+    else:
+        print('Não é o primeiro item')
+
     clicar(clicar_nome_do_arquivo)
-    time.sleep(1)
+    # time.sleep(1)
     gui.write(f'{codigo_sku}.png')
-    time.sleep(1)
+    # time.sleep(1)
     gui.hotkey('alt', 'a')
     print(f'{codigo_sku} feito')
-    time.sleep(1)
     esc()
-    time.sleep(1)
     tab()
     time.sleep(0.5)
 
 
 def trocar_a_foto_catalogo(codigo_sku):
-    gui.PAUSE = 1
+    gui.PAUSE = 0.5
     clicar(selecionar_troca_imagem_catalogo)
     clicar(clicar_subs_imagem_catalogo)
     time.sleep(1)
@@ -152,10 +163,12 @@ def trocar_a_foto_catalogo(codigo_sku):
     time.sleep(2)
 
 
-pausa(1,
-      'Selecione a pasta com as imagens sem fundo')
+# pausa(1,
+#       'Selecione a pasta com as imagens sem fundo')
 
-pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
+# pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
+
+pasta_com_fotos = r'D:\Organizar\Tudo\A Pasta Geral\arrumar\ETP1 LUCAS\imagens\sem_fundo'
 
 print('--------Imagens---------')
 pausa(5,
