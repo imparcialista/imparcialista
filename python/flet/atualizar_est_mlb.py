@@ -153,7 +153,6 @@ def main(page):
     btn_perguntar = ft.ElevatedButton("Atualizar", on_click=btn_click)
     btn_fazer_refresh = ft.ElevatedButton("Fazer refresh", on_click=programa)
 
-    # page.add(texto_dica)
     page.add(texto_dica, id_mlb, qtd_mlb, conta_mlb, btn_perguntar, btn_fazer_refresh)
 
 

@@ -64,7 +64,7 @@ def main(page: ft.Page):
         page.controls.append(sair_btn)
 
     txt_informativo = ft.Text(value='Antes de escolher, deixe o programa em um lugar adequado, '
-                                    'não poderá mexer depois, apenas se reinicar o programa')
+                                    'não poderá mexer depois, apenas se reiniciar o programa')
     page.add(txt_informativo)
     escolha_btn_1 = ft.ElevatedButton(text="Escolha 1", on_click=capturador_1)
     escolha_btn_2 = ft.ElevatedButton(text="Escolha 2", on_click=capturador_2)

@@ -11,6 +11,7 @@ exportar_xmls = 1225, 436
 clicar_download = 653, 588
 desselecionar = 759, 245
 
+
 def ir_para_proxima_pagina():
     for i in range(6):
         clicar(fim_do_scroll)
@@ -19,6 +20,7 @@ def ir_para_proxima_pagina():
     clicar(proxima_pagina)
     # encontrar_e_clicar('botao_proxima_pagina.png', confianca)
     esperar(0.5)
+
 
 def exportador(qtd_paginas):
     # qtd_paginas = qtd_paginas + 1

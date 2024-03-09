@@ -30,6 +30,6 @@ def main(page: ft.Page):
         actions_alignment=ft.MainAxisAlignment.END,
     )
 
-    page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button!'))
+    page.add(ft.Text('Try exiting this app by clicking window\'s "Close" button! :D'))
 
 ft.app(target=main)

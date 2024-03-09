@@ -1,6 +1,8 @@
 import os
 from tkinter.filedialog import askdirectory
 
+# teste
+
 pasta_origem = askdirectory(title='Pasta origem')
 pasta_destino = askdirectory(title='Pasta destino')
 
@@ -50,3 +52,4 @@ for nome_arquivo in lista_arquivos:
 apagar = os.path.join(pasta_origem, 'Apagar')
 if os.path.exists(apagar):
     os.rmdir(apagar)
+

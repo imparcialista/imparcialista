@@ -59,3 +59,5 @@ for lista in range(100):
 
 
 pyautogui.hotkey('alt', 'tab')
+
+# teste
