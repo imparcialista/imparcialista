@@ -17,7 +17,9 @@
 | -------- | -------- |
 | API do Mercado Livre | <a href="https://www.youtube.com/playlist?list=PL2un9yLp42zNa4vI4ZfQiy3ETDenXPe0T" target="blank">Acessar</a> |
 
-
+| Repositório | Link |
+| -------- | -------- |
+| Crie seu próprio assistente virtual com inteligência artificial | <a href="https://github.com/imparcialista/seu-assistente-virtual" target="blank">Acessar</a> |
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=imparcialista&theme=dark&hide_border=true&locale=pt_BR&date_format=j%20M%5B%20Y%5D&mode=weekly)](https://git.io/streak-stats)
 
