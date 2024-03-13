@@ -1,5 +1,5 @@
 from python.ferramentas import *
-from ignorar2 import link_zx
+from ignorar2 import link_zx_lucas
 
 '''
     O programa vai precisar de uma pasta com as imagens já feitas e o nome de cada imagem, a descrição para a
@@ -37,7 +37,7 @@ descer_pagina = 618, 665
 opcao_programar = 357, 623
 selecionar_data = 297, 498
 botao_programar = 540, 713
-pasta = r'D:\Organizar\Tudo\A Pasta Geral\arrumar\ETP1 LUCAS\imagens\sem_fundo\0-outros\2024-POSTS'
+pasta = r'D:\Organizar\Tudo\A Pasta Geral\arrumar\ETP1 LUCAS\imagens\post_redes\meta'
 
 
 inicio = time.time()
@@ -47,7 +47,7 @@ inicio = time.time()
 # pasta_com_fotos = selecionar_pasta(f'Pasta com as imagens')
 pasta_com_fotos = pasta
 
-link  = link_zx
+link  = link_zx_lucas
 
 def abrir_pagina(site):
     pyperclip.copy(f'{site}')
@@ -92,7 +92,7 @@ for linha in range(linhas):
     abrir_pagina(link)
     encontrar_e_clicar('add-foto.png')
     esperar(0.5)
-    encontrar_e_clicar('add-foto-desktop.png')
+    # encontrar_e_clicar('add-foto-desktop.png')
     esperar(1)
     ir_para_pasta(clicar_caminho_da_pasta, pasta_com_fotos)
     esperar(1)
@@ -119,7 +119,7 @@ for linha in range(linhas):
         tab()
         gui.press('1')
         esperar(0.5)
-        gui.press('2')
+        gui.press('1')
         tab()
         gui.press('0')
         tab()
@@ -133,4 +133,4 @@ for linha in range(linhas):
 
 fim = time.time()
 tempo_total = fim - inicio
-print(f"Tempo de execução: {tempo_total} segundos")
+print(f"Tempo de execução: {tempo_total:0f} segundos")
