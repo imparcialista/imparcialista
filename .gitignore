@@ -1,3 +1,5 @@
+.idea
+.venv
 python/programas/meta/ignorar.py
 python/programas/meta/ignorar2.py
 python/programas/marketplaces/mlb/chaves.py
