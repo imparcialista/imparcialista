@@ -102,12 +102,23 @@ a {
 .apre__sobre {
     margin: 5% 15%;
     display: flex;
-
     justify-content: space-between;
     gap: 2rem;
 }
 
+.apre__sobre_links {
+    margin: 5% 15%;
+
+    gap: 1rem;
+}
+
 .apre__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.apre__conteudo_links {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -248,7 +259,6 @@ a {
 }
 
 .lista__link__certificado li {
-    text-transform: lowercase;
     padding: 7px 0px;
 }
 
@@ -271,7 +281,7 @@ a {
 }
 
 h2 {
-    color: var(--cor-destaque-secundaria);
+    color: var(--cor-links);
 }
 
 /* Rodapé Imparcialista */
