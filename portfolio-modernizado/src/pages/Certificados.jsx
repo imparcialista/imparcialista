@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCertificate, FaGraduationCap } from 'react-icons/fa';
+import { TrophyIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
 
 const Certificados = () => {
   const certificadosHashtag = [
@@ -106,7 +106,7 @@ const Certificados = () => {
           {/* Hashtag Programação */}
           <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 glass">
             <h2 className="text-3xl font-bold mb-6 text-links flex items-center">
-              <FaGraduationCap className="inline mr-2" />
+              <AcademicCapIcon className="inline mr-2 w-8 h-8" />
               Escola: Hashtag Programação
             </h2>
             <div className="space-y-4">
@@ -129,7 +129,7 @@ const Certificados = () => {
           {/* Alura */}
           <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 glass">
             <h2 className="text-3xl font-bold mb-6 text-links flex items-center">
-              <FaCertificate className="inline mr-2" />
+              <TrophyIcon className="inline mr-2 w-8 h-8" />
               Escola: Alura
             </h2>
             <div className="space-y-4">

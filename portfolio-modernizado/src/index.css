@@ -16,11 +16,97 @@
   --cor-amarelo-lrc: #ffd846;
   --fonte-primaria: "Inter", sans-serif;
   --fonte-secundaria: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --background-primary: #ffffff;
+  --background-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --shadow-light: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  --background-primary: #0f172a;
+  --background-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --shadow-light: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Typography Improvements */
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Flip Card Animation */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, var(--cor-destaque), var(--cor-destaque-secundaria));
+  color: white;
+}
+
+/* Parallax Scrolling */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--cor-destaque);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 @layer base {
 

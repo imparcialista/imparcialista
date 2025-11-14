@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaBullseye, FaBriefcase, FaCode, FaGraduationCap, FaLightbulb, FaLink } from 'react-icons/fa';
+import {
+  FunnelIcon,
+  BriefcaseIcon,
+  CodeBracketIcon,
+  AcademicCapIcon,
+  LightBulbIcon,
+  LinkIcon
+} from '@heroicons/react/24/outline';
 
 const Portfolio = () => {
   const repositorios = [
@@ -57,7 +64,7 @@ const Portfolio = () => {
           <div className="space-y-12">
             {/* Objetivo Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links"><FaBullseye className="inline mr-2" />Objetivo</h2>
+              <h2 className="text-3xl font-bold mb-6 text-links"><FunnelIcon className="inline mr-2 w-8 h-8" />Objetivo</h2>
               <p className="text-gray-300 leading-relaxed">
                 Expandir meu aplicativo dentro do mercado Brasileiro, ajudar vendedores e comerciantes 
                 a crescer, com ferramentas e automações que facilitam a vida das pessoas, e que 
@@ -67,7 +74,7 @@ const Portfolio = () => {
 
             {/* Qualificações Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links"><FaCode className="inline mr-2" />Qualificações</h2>
+              <h2 className="text-3xl font-bold mb-6 text-links"><CodeBracketIcon className="inline mr-2 w-8 h-8" />Qualificações</h2>
               <p className="text-gray-300 leading-relaxed">
                 Desenvolvi uma automação para visualização de estoque, de uma empresa ou mais, 
                 obtendo informações diretamente do Bling ou de uma planilha, também tenho uma 
@@ -119,7 +126,7 @@ const Portfolio = () => {
           <div className="space-y-12">
             {/* Experiência Profissional Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links"><FaBriefcase className="inline mr-2" />Experiência Profissional</h2>
+              <h2 className="text-3xl font-bold mb-6 text-links"><BriefcaseIcon className="inline mr-2 w-8 h-8" />Experiência Profissional</h2>
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-4">
                   <p className="text-lg font-semibold">ZX CONTATO, Franco da Rocha — Gerente</p>
@@ -134,7 +141,7 @@ const Portfolio = () => {
 
             {/* Escolaridade Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links"><FaGraduationCap className="inline mr-2" />Escolaridade</h2>
+              <h2 className="text-3xl font-bold mb-6 text-links"><AcademicCapIcon className="inline mr-2 w-8 h-8" />Escolaridade</h2>
               <div className="border-l-4 border-green-500 pl-4">
                 <p className="text-lg font-semibold">E. E. Benedito Fagundes Marques | 2014-2017</p>
                 <p className="text-gray-400">Ensino Médio Completo | Franco da Rocha, São Paulo</p>
@@ -143,7 +150,7 @@ const Portfolio = () => {
 
             {/* Conhecimentos Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links"><FaLightbulb className="inline mr-2" />Conhecimentos</h2>
+              <h2 className="text-3xl font-bold mb-6 text-links"><LightBulbIcon className="inline mr-2 w-8 h-8" />Conhecimentos</h2>
 
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4 text-accent">Intermediários</h3>

@@ -7,8 +7,10 @@ import linkedinIcon from '../assets/linkedin.png';
 const Home = () => {
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
+      {/* Parallax Background */}
+      <div className="absolute inset-0 parallax bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'}}></div>
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-black/80"></div>
       {/* Floating particles effect */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent rounded-full opacity-50 animate-float"></div>
