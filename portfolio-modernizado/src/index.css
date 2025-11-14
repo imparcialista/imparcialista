@@ -30,6 +30,15 @@
     box-sizing: border-box;
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
   body {
     background-color: #151515;
     color: var(--cor-primaria);

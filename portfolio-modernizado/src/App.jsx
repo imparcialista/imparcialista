@@ -7,6 +7,7 @@ import Certificados from './pages/Certificados';
 import Tutoriais from './pages/Tutoriais';
 import Links from './pages/Links';
 import Code from './pages/Code';
+import Imparcialista from './pages/Imparcialista';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="tutoriais" element={<Tutoriais />} />
           <Route path="links" element={<Links />} />
           <Route path="code" element={<Code />} />
+          <Route path="imparcialista" element={<Imparcialista />} />
         </Route>
       </Routes>
     </Router>
