@@ -15,6 +15,7 @@ export default {
         'blue-button-dark': 'var(--botao-azul-25ma)',
         'lrc-blue': 'var(--cor-azul-lrc)',
         'lrc-yellow': 'var(--cor-amarelo-lrc)',
+        border: 'var(--border-color)',
       },
       fontFamily: {
         primary: 'var(--fonte-primaria)',

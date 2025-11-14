@@ -31,6 +31,8 @@
   --text-secondary: #94a3b8;
   --border-color: #334155;
   --shadow-light: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --cor-primaria: #0f172a;
+  --cor-secundaria: #f1f5f9;
 }
 
 @tailwind base;
@@ -126,8 +128,8 @@ p {
   }
 
   body {
-    background-color: #151515;
-    color: var(--cor-primaria);
+    background-color: var(--background-primary);
+    color: var(--text-primary);
     font-family: var(--fonte-primaria);
     min-height: 100vh;
   }

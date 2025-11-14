@@ -4,18 +4,18 @@ import { FaGithub, FaLinkedin, FaYoutube, FaEnvelope, FaPhone } from 'react-icon
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 py-12 mt-16">
+    <footer className="bg-secondary py-12 mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-links">Contato</h3>
             <div className="space-y-2">
-              <p className="flex items-center text-gray-300">
+              <p className="flex items-center text-primary">
                 <FaEnvelope className="mr-2 text-accent" />
                 lucas.araujo@example.com
               </p>
-              <p className="flex items-center text-gray-300">
+              <p className="flex items-center text-primary">
                 <FaPhone className="mr-2 text-accent" />
                 (11) 99999-9999
               </p>
@@ -30,7 +30,7 @@ const Footer = () => {
                 href="https://github.com/imparcialista"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
               >
                 <FaGithub size={24} />
               </a>
@@ -38,7 +38,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/lucas-araujo-costa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
               >
                 <FaLinkedin size={24} />
               </a>
@@ -46,7 +46,7 @@ const Footer = () => {
                 href="https://www.youtube.com/@imparcialista"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
               >
                 <FaYoutube size={24} />
               </a>
@@ -57,17 +57,17 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-links">Links Rápidos</h3>
             <div className="space-y-2">
-              <Link to="/" className="block text-gray-300 hover:text-accent transition-colors duration-300">Home</Link>
-              <Link to="/portfolio" className="block text-gray-300 hover:text-accent transition-colors duration-300">Portfólio</Link>
-              <Link to="/certificados" className="block text-gray-300 hover:text-accent transition-colors duration-300">Certificados</Link>
-              <Link to="/tutoriais" className="block text-gray-300 hover:text-accent transition-colors duration-300">Tutoriais</Link>
-              <Link to="/links" className="block text-gray-300 hover:text-accent transition-colors duration-300">Links</Link>
+              <Link to="/" className="block text-primary hover:text-accent transition-colors duration-300">Home</Link>
+              <Link to="/portfolio" className="block text-primary hover:text-accent transition-colors duration-300">Portfólio</Link>
+              <Link to="/certificados" className="block text-primary hover:text-accent transition-colors duration-300">Certificados</Link>
+              <Link to="/tutoriais" className="block text-primary hover:text-accent transition-colors duration-300">Tutoriais</Link>
+              <Link to="/links" className="block text-primary hover:text-accent transition-colors duration-300">Links</Link>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400">&copy; 2024 Lucas Araujo. Todos os direitos reservados.</p>
+        <div className="border-t border-border mt-8 pt-8 text-center">
+          <p className="text-secondary">&copy; 2024 Lucas Araujo. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
