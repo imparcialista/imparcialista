@@ -1,8 +1,8 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY portfolio-modernizado/package.json portfolio-modernizado/package-lock.json ./
 RUN npm ci
-COPY . .
+COPY portfolio-modernizado ./
 RUN npm run build
 
 FROM nginx:stable-alpine
