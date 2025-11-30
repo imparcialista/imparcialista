@@ -10,29 +10,21 @@ import {
 } from '@heroicons/react/24/outline';
 
 const Portfolio = () => {
-  const repositorios = [
+  const sites = [
     {
-      nome: 'Alura Plus',
-      url: './estudos/alura/alura-plus/index.html',
-      descricao: 'Site desenvolvido seguindo as aulas da Alura sobre HTML e CSS'
+      nome: 'Luarco App',
+      url: 'https://luarco.com/',
+      descricao: 'Em desenvolvimento, site para divulgação do meu aplicativo de automações para vendedores e comerciantes'
     },
     {
-      nome: 'Alura Books',
-      url: './estudos/alura/alura-books/index.html',
-      descricao: 'Site desenvolvido seguindo as aulas da Alura sobre HTML e CSS'
+      nome: 'Lufin',
+      url: 'https://lufin.com.br/',
+      descricao: 'Em desenvolvimento, site para finanças pessoais e controle de gastos'
     },
     {
-      nome: '# Jogo da velha',
-      url: './jogo-da-velha/index.html',
-      descricao: 'Um jogo da velha que estou desenvolvendo junto com o Gabriel Lima, projeto do Trio de dois'
-    }
-  ];
-
-  const repositoriosColaborativos = [
-    {
-      nome: 'Trio de dois',
-      url: 'https://github.com/sanshee2/trio-de-dois',
-      descricao: 'Eu e meu amigo Gabriel Lima, estamos estudando e testando coisas juntos, nossos projetos vão estar nesse repositório'
+      nome: 'CHA - codehealthanalyzer',
+      url: 'https://github.com/imparcialista/codehealthanalyzer',
+      descricao: 'Em desenvolvimento, ferramenta em Python para análise de qualidade de código'
     }
   ];
 
@@ -54,7 +46,7 @@ const Portfolio = () => {
             Lucas Araujo Costa
           </h1>
           <h2 className="text-xl sm:text-2xl text-links mb-8">
-            Desenvolvedor, 24 Anos, Solteiro
+            Desenvolvedor, 25 anos, Solteiro
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
         </div>
@@ -85,9 +77,9 @@ const Portfolio = () => {
 
             {/* Repositórios Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links">Meus repositórios</h2>
+              <h2 className="text-3xl font-bold mb-6 text-links">Meus sites e projetos</h2>
               <div className="space-y-6">
-                {repositorios.map((repo, index) => (
+                {sites.map((repo, index) => (
                   <div key={index} className="border-l-4 border-accent pl-4">
                     <a
                       href={repo.url}
@@ -101,25 +93,6 @@ const Portfolio = () => {
               </div>
             </section>
 
-            {/* Repositórios Colaborativos Section */}
-            <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-bold mb-6 text-links">Repositórios que colaboro</h2>
-              <div className="space-y-6">
-                {repositoriosColaborativos.map((repo, index) => (
-                  <div key={index} className="border-l-4 border-accent-secondary pl-4">
-                    <a
-                      href={repo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl font-semibold text-accent-secondary hover:text-accent-secondary-hover transition-colors duration-300"
-                    >
-                      {repo.nome}
-                    </a>
-                    <p className="text-gray-400 mt-2">{repo.descricao}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
           </div>
 
           {/* Right Column */}

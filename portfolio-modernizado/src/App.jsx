@@ -8,6 +8,7 @@ import Tutoriais from './pages/Tutoriais';
 import Links from './pages/Links';
 import Code from './pages/Code';
 import Imparcialista from './pages/Imparcialista';
+import VpsHostinger from './pages/VpsHostinger';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="certificados" element={<Certificados />} />
           <Route path="tutoriais" element={<Tutoriais />} />
           <Route path="links" element={<Links />} />
+          <Route path="hostinger-vps" element={<VpsHostinger />} />
           <Route path="code" element={<Code />} />
           <Route path="imparcialista" element={<Imparcialista />} />
         </Route>

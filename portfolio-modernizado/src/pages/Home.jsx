@@ -30,7 +30,7 @@ const Home = () => {
             </h1>
             
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-              Olá! Eu sou o Lucas Araujo, trabalho há mais de 5 anos com marketplaces, 
+              Olá! Eu sou o Lucas Araujo, trabalho há mais de 6 anos com marketplaces, 
               e nesse tempo <strong className="text-accent">desenvolvi um aplicativo para facilitar a vida 
               de quem vende no ecommerce.</strong>
               <br /><br />

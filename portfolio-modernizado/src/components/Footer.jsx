@@ -13,11 +13,11 @@ const Footer = () => {
             <div className="space-y-2">
               <p className="flex items-center text-primary">
                 <FaEnvelope className="mr-2 text-accent" />
-                lucas.araujo@example.com
+                imparcialista@gmail.com
               </p>
               <p className="flex items-center text-primary">
                 <FaPhone className="mr-2 text-accent" />
-                (11) 99999-9999
+                (11) 97592-0589
               </p>
             </div>
           </div>
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-secondary">&copy; 2024 Lucas Araujo. Todos os direitos reservados.</p>
+          <p className="text-secondary">&copy; 2025 Lucas Araujo. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
