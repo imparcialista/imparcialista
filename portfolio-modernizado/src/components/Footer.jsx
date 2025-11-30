@@ -58,7 +58,6 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-links">Links Rápidos</h3>
             <div className="space-y-2">
               <Link to="/" className="block text-primary hover:text-accent transition-colors duration-300">Home</Link>
-              <Link to="/portfolio" className="block text-primary hover:text-accent transition-colors duration-300">Portfólio</Link>
               <Link to="/certificados" className="block text-primary hover:text-accent transition-colors duration-300">Certificados</Link>
               <Link to="/tutoriais" className="block text-primary hover:text-accent transition-colors duration-300">Tutoriais</Link>
               <Link to="/links" className="block text-primary hover:text-accent transition-colors duration-300">Links</Link>

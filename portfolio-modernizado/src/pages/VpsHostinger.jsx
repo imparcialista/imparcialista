@@ -115,9 +115,11 @@ const VpsHostinger = () => {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-700 rounded-full blur-3xl opacity-10" />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Cabeçalho */}
+        {/* Cabeçalho da página */}
         <div className="text-center mb-12 animate-fade-in">
-          
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-accent-secondary mb-3">
+            Indicação exclusiva
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 gradient-text">
             VPS Hostinger com meu referral
           </h1>
@@ -128,7 +130,7 @@ const VpsHostinger = () => {
           </p>
         </div>
 
-        {/* Card principal */}
+        {/* Card principal - link geral */}
         <section className="glass bg-gray-900/70 rounded-3xl p-6 sm:p-8 mb-10 shadow-2xl border border-white/5">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>

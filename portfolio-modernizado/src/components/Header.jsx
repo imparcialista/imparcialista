@@ -6,9 +6,7 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    // { path: '/', label: 'Início' },
-    // { path: '/portfolio', label: 'Portfólio' },
-    { path: '/hostinger-vps', label: 'Hostinger VPS' },
+    { path: '/hostinger-vps', label: 'VPS Hostinger' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -18,7 +16,10 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Brand */}
-          <Link to="/" className="text-2xl font-bold text-accent hover:text-accent-hover transition-colors duration-300">
+          <Link
+            to="/"
+            className="text-2xl font-bold text-accent hover:text-accent-hover transition-colors duration-300"
+          >
             @imparcialista
           </Link>
 
@@ -36,7 +37,7 @@ const Header = () => {
               >
                 {item.label}
                 {isActive(item.path) && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent-hover"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent-hover" />
                 )}
               </Link>
             ))}
