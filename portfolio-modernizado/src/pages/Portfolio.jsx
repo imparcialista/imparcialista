@@ -200,28 +200,16 @@ export const PortfolioSections = () => {
             {/* Links Section */}
             <section className="bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <h2 className="text-3xl font-bold mb-6 text-links">Links rápidos</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Link
-                  to="/certificados"
-                  className="bg-accent text-white px-6 py-3 rounded-lg text-center font-semibold hover:bg-accent-hover transition-colors duration-300"
-                >
-                  Certificados
-                </Link>
-                <Link
-                  to="/tutoriais"
-                  className="bg-accent-secondary text-white px-6 py-3 rounded-lg text-center font-semibold hover:bg-accent-secondary-hover transition-colors duration-300"
-                >
-                  Tutoriais
-                </Link>
-                <Link
-                  to="/links"
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:bg-green-700 transition-colors duration-300"
-                >
-                  Links úteis
-                </Link>
-              </div>
-
+              
               <div className="mt-8 space-y-4">
+                <a
+                  href="https://hub.la/g/rzcIwxJl98a3gTblSVEh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-gray-800 text-white px-6 py-3 rounded-lg text-center font-semibold hover:bg-gray-900 transition-colors duration-300 border border-gray-600"
+                >
+                  Meu Curso
+                </a>
                 <a
                   href="https://www.youtube.com/@imparcialista"
                   target="_blank"
@@ -246,6 +234,8 @@ export const PortfolioSections = () => {
                 >
                   GitHub
                 </a>
+                
+                
               </div>
             </section>
           </div>
