@@ -7,6 +7,9 @@ const Header = () => {
 
   const navItems = [
     { path: '/hostinger-vps', label: 'VPS Hostinger' },
+    { path: 'https://hub.la/g/rzcIwxJl98a3gTblSVEh', label: 'Meu Curso' },
+    { path: '/imparcialista', label: 'Todos Links' },
+
   ];
 
   const isActive = (path) => location.pathname === path;

@@ -11,6 +11,14 @@ const Imparcialista = () => {
   };
 
   const linksByCategory = {
+    "Curso": [
+      {
+        href: "https://hub.la/g/rzcIwxJl98a3gTblSVEh",
+        icon: <FaHeart />,
+        text: "Curso - API Mercado Livre",
+        description: "O curso ainda não está completo, mas você pode me apoiar para que eu possa concluir!",
+        target: "_blank"
+      }],
     "Comunidade": [
       {
         href: "https://discord.gg/5pzCSWnNu7",
@@ -87,13 +95,6 @@ const Imparcialista = () => {
       }
     ],
     "Luarco & Vendas": [
-      {
-        href: "https://apoia.se/imparcialista",
-        icon: <FaHeart />,
-        text: "Apoia-se do Canal",
-        description: "Gosta do conteúdo? Considere me pagar um café!",
-        target: "_blank"
-      },
       {
         href: "/",
         icon: <FaLaptopCode />,
