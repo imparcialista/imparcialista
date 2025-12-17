@@ -69,9 +69,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-secondary">&copy; 2025 Lucas Araujo. Todos os direitos reservados.</p>
-        </div>
       </div>
     </footer>
   );
