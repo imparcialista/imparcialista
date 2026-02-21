@@ -5,9 +5,9 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen bg-primary text-secondary">
+    <div className="min-h-screen text-primary" style={{ background: '#050505' }}>
       <Header />
-      <main className="container mx-auto px-6 py-8">
+      <main>
         <Outlet />
       </main>
       <Footer />
