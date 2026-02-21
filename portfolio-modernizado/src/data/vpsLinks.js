@@ -1,5 +1,47 @@
 export const REFERRAL_MAIN = 'https://hostinger.com.br?REFERRALCODE=imparcialista';
 
+// Specs e metadados de cada plano (independente do período).
+// Atualize aqui se a Hostinger mudar as configurações.
+export const VPS_PLANOS = [
+  {
+    id: 'kvm1',
+    nome: 'KVM 1',
+    nivel: 'Entrada',
+    tag: 'Para começar',
+    cor: '#64748b',
+    specs: { vcpu: 1, ram: 4, ssd: 50, bandwidth: 1 },
+    idealPara: ['Aprender Linux', 'Apps pessoais', 'Bots e scripts', 'Projetos iniciais'],
+  },
+  {
+    id: 'kvm2',
+    nome: 'KVM 2',
+    nivel: 'Intermediário',
+    tag: 'Mais popular',
+    popular: true,
+    cor: '#6479ed',
+    specs: { vcpu: 2, ram: 8, ssd: 100, bandwidth: 2 },
+    idealPara: ['WordPress', 'APIs em produção', 'Servidor de jogos leve', 'Projetos em equipe'],
+  },
+  {
+    id: 'kvm4',
+    nome: 'KVM 4',
+    nivel: 'Performance',
+    tag: 'Recomendado',
+    cor: '#368d79',
+    specs: { vcpu: 4, ram: 16, ssd: 200, bandwidth: 4 },
+    idealPara: ['E-commerce', 'Múltiplos sites', 'Banco de dados', 'CI/CD pipelines'],
+  },
+  {
+    id: 'kvm8',
+    nome: 'KVM 8',
+    nivel: 'Alto tráfego',
+    tag: 'Máxima potência',
+    cor: '#f59e0b',
+    specs: { vcpu: 8, ram: 32, ssd: 400, bandwidth: 8 },
+    idealPara: ['Alto tráfego', 'Machine learning', 'Infraestrutura empresarial', 'Clusters'],
+  },
+];
+
 export const VPS_PERIODOS = [
   {
     periodo: '1 mês',

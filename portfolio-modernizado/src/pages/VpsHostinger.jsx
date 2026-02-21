@@ -1,42 +1,173 @@
-import React from 'react';
-import { FaExternalLinkAlt, FaCopy } from 'react-icons/fa';
-import { REFERRAL_MAIN, VPS_PERIODOS } from '../data/vpsLinks';
+import React, { useState } from 'react';
+import { FaExternalLinkAlt, FaCopy, FaMicrochip, FaMemory, FaHdd, FaNetworkWired } from 'react-icons/fa';
+import { REFERRAL_MAIN, VPS_PERIODOS, VPS_PLANOS } from '../data/vpsLinks';
 
-const VpsHostinger = () => {
-  const referralMain = REFERRAL_MAIN;
-  const sections = VPS_PERIODOS;
+// Máximos para calcular proporção das barras (baseado no KVM 8)
+const SPEC_MAX = { vcpu: 8, ram: 32, ssd: 400, bandwidth: 8 };
+
+const SPECS_META = [
+  { key: 'vcpu',      icon: FaMicrochip,     label: 'vCPU',     unit: 'core',  unitPlural: 'cores' },
+  { key: 'ram',       icon: FaMemory,        label: 'RAM',      unit: 'GB',    unitPlural: 'GB'    },
+  { key: 'ssd',       icon: FaHdd,           label: 'NVMe SSD', unit: 'GB',    unitPlural: 'GB'    },
+  { key: 'bandwidth', icon: FaNetworkWired,  label: 'Tráfego',  unit: 'TB/mês',unitPlural: 'TB/mês'},
+];
+
+function SpecBar({ value, max, color }) {
+  const pct = Math.round((value / max) * 100);
+  return (
+    <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
+      <div
+        className="h-full rounded-full transition-all duration-700"
+        style={{ width: `${pct}%`, backgroundColor: color }}
+      />
+    </div>
+  );
+}
+
+function PlanoCard({ plano, link, onCopy, onOpen }) {
+  const val = (key) => plano.specs[key];
+  const unit = (meta) => val(meta.key) === 1 ? meta.unit : meta.unitPlural;
+
+  return (
+    <div
+      className="relative flex flex-col rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+      style={{
+        background: 'rgba(10,10,10,0.7)',
+        borderColor: plano.popular ? plano.cor : 'rgba(255,255,255,0.07)',
+        boxShadow: plano.popular ? `0 0 0 1px ${plano.cor}40` : undefined,
+      }}
+    >
+      {/* Faixa colorida no topo */}
+      <div className="h-1 w-full" style={{ background: plano.cor }} />
+
+      {/* Badge popular */}
+      {plano.popular && (
+        <div
+          className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full text-white"
+          style={{ background: plano.cor }}
+        >
+          ★ Popular
+        </div>
+      )}
+
+      <div className="p-5 flex flex-col gap-4 flex-1">
+        {/* Cabeçalho do card */}
+        <div>
+          <span
+            className="text-[10px] font-semibold uppercase tracking-[0.2em] mb-1 block"
+            style={{ color: plano.cor }}
+          >
+            {plano.nivel}
+          </span>
+          <h3 className="text-xl font-bold text-white">{plano.nome}</h3>
+          <span className="text-[11px] text-gray-500 mt-0.5 block">{plano.tag}</span>
+        </div>
+
+        {/* Specs com barras */}
+        <div className="flex flex-col gap-3">
+          {SPECS_META.map((meta) => {
+            const Icon = meta.icon;
+            return (
+              <div key={meta.key}>
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center gap-1.5 text-gray-400">
+                    <Icon size={10} />
+                    <span className="text-[11px]">{meta.label}</span>
+                  </div>
+                  <span className="text-[11px] font-mono font-semibold" style={{ color: plano.cor }}>
+                    {val(meta.key)} {unit(meta)}
+                  </span>
+                </div>
+                <SpecBar value={val(meta.key)} max={SPEC_MAX[meta.key]} color={plano.cor} />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Ideal para */}
+        <div>
+          <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Ideal para</p>
+          <div className="flex flex-wrap gap-1.5">
+            {plano.idealPara.map((uso) => (
+              <span
+                key={uso}
+                className="text-[10px] px-2 py-0.5 rounded-full border"
+                style={{ borderColor: `${plano.cor}40`, color: plano.cor, background: `${plano.cor}10` }}
+              >
+                {uso}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Botões */}
+        <div className="flex gap-2 mt-auto pt-2">
+          <button
+            onClick={() => onCopy(link)}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold border transition-all duration-200 hover:text-white"
+            style={{
+              borderColor: `${plano.cor}60`,
+              color: plano.cor,
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = plano.cor; e.currentTarget.style.borderColor = plano.cor; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = `${plano.cor}60`; }}
+          >
+            <FaCopy size={10} />
+            Copiar link
+          </button>
+          <button
+            onClick={() => onOpen(link)}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-white transition-all duration-200"
+            style={{ background: plano.cor }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+          >
+            <FaExternalLinkAlt size={9} />
+            Contratar
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function VpsHostinger() {
+  const [periodoIdx, setPeriodoIdx] = useState(1); // padrão: 12 meses
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = async (link) => {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(link);
       } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = link;
-        document.body.appendChild(textarea);
-        textarea.select();
+        const ta = document.createElement('textarea');
+        ta.value = link;
+        document.body.appendChild(ta);
+        ta.select();
         document.execCommand('copy');
-        document.body.removeChild(textarea);
+        document.body.removeChild(ta);
       }
-      alert('Link copiado para a área de transferência!');
-    } catch (error) {
-      alert(`Não foi possível copiar automaticamente. Copie manualmente: ${link}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      alert(`Copie manualmente: ${link}`);
     }
   };
 
-  const handleOpen = (link) => {
-    window.open(link, '_blank', 'noopener,noreferrer');
-  };
+  const handleOpen = (link) => window.open(link, '_blank', 'noopener,noreferrer');
+
+  const periodoAtual = VPS_PERIODOS[periodoIdx];
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Fundo com gradiente e brilhos */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black opacity-95" />
-      <div className="absolute -top-32 -right-32 w-72 h-72 bg-accent rounded-full blur-3xl opacity-20" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-700 rounded-full blur-3xl opacity-10" />
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Fundo */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full blur-3xl opacity-15" style={{ background: '#6479ed' }} />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl opacity-10" style={{ background: '#368d79' }} />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Cabeçalho da página */}
+
+        {/* Cabeçalho */}
         <div className="text-center mb-12 animate-fade-in">
           <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-accent-secondary mb-3">
             Indicação exclusiva
@@ -44,111 +175,109 @@ const VpsHostinger = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 gradient-text">
             VPS Hostinger com meu referral
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-            Escolha o plano de VPS ideal para o seu projeto e use meus links de indicação
-            para contratar direto na Hostinger. Você pode copiar o link ou abrir a página
-            de contratação em uma nova aba.
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+            Compare os planos, escolha o ideal para o seu projeto e use meu link de indicação
+            para contratar direto na Hostinger.
           </p>
         </div>
 
-        {/* Card principal - link geral */}
-        <section className="glass bg-gray-900/70 rounded-3xl p-6 sm:p-8 mb-10 shadow-2xl border border-white/5">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        {/* Card link geral */}
+        <section className="glass rounded-2xl p-5 sm:p-6 mb-10 border border-white/5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-accent mb-2">
+              <h2 className="text-base font-semibold text-white mb-1" style={{ color: 'inherit' }}>
                 Página principal de indicação
               </h2>
-              <p className="text-gray-300 mb-3 text-sm sm:text-base">
-                Se você ainda não decidiu o plano, pode começar pelo link geral
-                da minha página de indicação na Hostinger.
-              </p>
-              <p className="text-[11px] sm:text-xs text-gray-400 bg-black/40 rounded-xl px-4 py-3 border border-white/5">
-                Clique em "Copiar link" ou "Abrir página" para usar a indicação.
-              </p>
+              <p className="text-gray-500 text-xs font-mono break-all">{REFERRAL_MAIN}</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 min-w-[200px]">
+            <div className="flex gap-2 shrink-0">
               <button
-                onClick={() => handleCopy(referralMain)}
-                className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl border border-accent text-accent text-sm font-semibold hover:bg-accent hover:text-white transition-all duration-300"
+                onClick={() => handleCopy(REFERRAL_MAIN)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-accent/40 text-accent text-xs font-semibold hover:bg-accent hover:text-white hover:border-accent transition-all duration-200"
               >
-                <FaCopy className="mr-2" />
-                Copiar link
+                <FaCopy size={10} />
+                {copied ? 'Copiado!' : 'Copiar'}
               </button>
               <button
-                onClick={() => handleOpen(referralMain)}
-                className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl border border-accent text-accent text-sm font-semibold hover:bg-accent hover:text-white transition-all duration-300"
+                onClick={() => handleOpen(REFERRAL_MAIN)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent text-white text-xs font-semibold hover:opacity-85 transition-all duration-200"
               >
-                <FaExternalLinkAlt className="mr-2" />
-                Abrir página
+                <FaExternalLinkAlt size={9} />
+                Abrir
               </button>
             </div>
           </div>
         </section>
 
-        {/* Seções de planos */}
-        <div className="space-y-8">
-          {sections.map((section) => (
-            <section
-              key={section.periodo}
-              className="glass bg-gray-900/70 rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/5"
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
-                <div>
-                  <h2 className="text-2xl font-bold text-links">
-                    Planos VPS - {section.periodo}
-                  </h2>
-                  <p className="text-gray-400 text-sm sm:text-base mt-1">
-                    {section.descricao}
-                  </p>
-                </div>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/40">
-                  Hostinger VPS
-                </span>
-              </div>
+        {/* Seletor de período */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex rounded-xl p-1 gap-1" style={{ background: 'rgba(255,255,255,0.05)' }}>
+            {VPS_PERIODOS.map((p, i) => (
+              <button
+                key={p.periodo}
+                onClick={() => setPeriodoIdx(i)}
+                className="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+                style={
+                  periodoIdx === i
+                    ? { background: '#6479ed', color: '#fff' }
+                    : { color: '#6b7280' }
+                }
+              >
+                {p.periodo}
+              </button>
+            ))}
+          </div>
+        </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {section.planos.map((plano) => (
-                  <div
-                    key={plano.link}
-                    className="group relative rounded-2xl bg-black/40 border border-white/5 p-4 flex flex-col justify-between hover:border-accent/70 hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/10 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    <div className="relative z-10">
-                      <p className="text-[11px] uppercase tracking-wide text-gray-400 mb-1">
-                        {plano.nivel}
-                      </p>
-                      <h3 className="text-lg font-semibold text-accent mb-2">
-                        {plano.nome}
-                      </h3>
-                      <p className="text-[11px] text-gray-400 mb-4">
-                        Use os botões abaixo para copiar o link ou abrir a página do plano.
-                      </p>
-                    </div>
-                    <div className="relative z-10 flex flex-wrap gap-2 mt-auto">
-                      <button
-                        onClick={() => handleCopy(plano.link)}
-                        className="inline-flex items-center px-3 py-1.5 rounded-lg border border-accent text-accent text-xs font-semibold hover:bg-accent hover:text-white transition-colors duration-300"
-                      >
-                        <FaCopy className="mr-1.5" />
-                        Copiar
-                      </button>
-                      <button
-                        onClick={() => handleOpen(plano.link)}
-                        className="inline-flex items-center px-3 py-1.5 rounded-lg border border-accent text-accent text-xs font-semibold hover:bg-accent hover:text-white transition-colors duration-300"
-                      >
-                        <FaExternalLinkAlt className="mr-1.5" />
-                        Abrir
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+        {/* Descrição do período */}
+        <p className="text-center text-gray-500 text-sm mb-8">{periodoAtual.descricao}</p>
+
+        {/* Grid de cards de planos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {VPS_PLANOS.map((plano, idx) => (
+            <PlanoCard
+              key={plano.id}
+              plano={plano}
+              link={periodoAtual.planos[idx].link}
+              onCopy={handleCopy}
+              onOpen={handleOpen}
+            />
           ))}
         </div>
+
+        {/* Legenda comparativa */}
+        <div className="mt-10 glass rounded-2xl p-5 border border-white/5">
+          <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Comparativo rápido</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-gray-500 text-xs">
+                  <th className="text-left pb-3 pr-4 font-medium">Plano</th>
+                  {SPECS_META.map((m) => (
+                    <th key={m.key} className="text-right pb-3 px-3 font-medium">{m.label}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {VPS_PLANOS.map((plano) => (
+                  <tr key={plano.id} className="border-t border-white/5">
+                    <td className="py-2.5 pr-4">
+                      <span className="font-semibold text-white">{plano.nome}</span>
+                      <span className="ml-2 text-[10px] text-gray-500">{plano.nivel}</span>
+                    </td>
+                    {SPECS_META.map((meta) => (
+                      <td key={meta.key} className="py-2.5 px-3 text-right font-mono text-xs" style={{ color: plano.cor }}>
+                        {plano.specs[meta.key]} {meta.unit}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </div>
   );
-};
-
-export default VpsHostinger;
+}
