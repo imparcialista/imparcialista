@@ -7,12 +7,14 @@ import {
   REFERRAL_MAIN,
   VPS_PERIODOS, VPS_PLANOS,
   HOSTING_PERIODOS, HOSTING_PLANOS,
+  CLOUD_PERIODOS, CLOUD_PLANOS,
 } from '../data/vpsLinks';
 
 // ─── Configurações por categoria ─────────────────────────────────────────────
 
 const CATEGORIAS = [
   { id: 'hosting', label: 'Hospedagem de Sites' },
+  { id: 'cloud',   label: 'Cloud'               },
   { id: 'vps',     label: 'VPS'                 },
   // Futuras categorias entram aqui
 ];
@@ -181,6 +183,50 @@ function TabelaComparativa({ planos, specMeta }) {
   );
 }
 
+const CLOUD_SPEC_MAX  = { vcpu: 6, ram: 12, ssd: 300, sites: 300 };
+const CLOUD_SPEC_META = [
+  { key: 'vcpu',  icon: FaMicrochip, label: 'vCPU',     unit: 'core', unitPlural: 'cores' },
+  { key: 'ram',   icon: FaMemory,    label: 'RAM',      unit: 'GB',   unitPlural: 'GB'    },
+  { key: 'ssd',   icon: FaHdd,       label: 'NVMe SSD', unit: 'GB',   unitPlural: 'GB'    },
+  { key: 'sites', icon: FaGlobe,     label: 'Sites',    unit: 'site', unitPlural: 'sites' },
+];
+
+// ─── Seção Cloud ─────────────────────────────────────────────────────────────
+
+function SecaoCloud({ onCopy, onOpen }) {
+  const [periodoIdx, setPeriodoIdx] = useState(1);
+  const periodo = CLOUD_PERIODOS[periodoIdx];
+
+  return (
+    <>
+      <div className="flex justify-center mb-6">
+        <div className="inline-flex rounded-xl p-1 gap-1" style={{ background: 'rgba(255,255,255,0.05)' }}>
+          {CLOUD_PERIODOS.map((p, i) => (
+            <button key={p.periodo} onClick={() => setPeriodoIdx(i)}
+              className="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
+              style={periodoIdx === i ? { background: '#6479ed', color: '#fff' } : { color: '#6b7280' }}>
+              {p.periodo}
+            </button>
+          ))}
+        </div>
+      </div>
+      <p className="text-center text-gray-500 text-sm mb-8">{periodo.descricao}</p>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {CLOUD_PLANOS.map((plano) => {
+          const linkObj = periodo.planos.find((p) => p.id === plano.id);
+          return (
+            <PlanoCard key={plano.id} plano={plano}
+              specMeta={CLOUD_SPEC_META} specMax={CLOUD_SPEC_MAX}
+              link={linkObj?.link ?? '#'}
+              onCopy={onCopy} onOpen={onOpen} />
+          );
+        })}
+      </div>
+      <TabelaComparativa planos={CLOUD_PLANOS} specMeta={CLOUD_SPEC_META} />
+    </>
+  );
+}
+
 // ─── Seção VPS ────────────────────────────────────────────────────────────────
 
 function SecaoVPS({ onCopy, onOpen }) {
@@ -341,6 +387,7 @@ export default function VpsHostinger() {
 
         {/* Conteúdo da categoria */}
         {categoria === 'hosting' && <SecaoHosting onCopy={handleCopy} onOpen={handleOpen} />}
+        {categoria === 'cloud'   && <SecaoCloud   onCopy={handleCopy} onOpen={handleOpen} />}
         {categoria === 'vps'     && <SecaoVPS     onCopy={handleCopy} onOpen={handleOpen} />}
 
       </div>

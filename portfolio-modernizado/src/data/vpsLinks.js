@@ -107,6 +107,80 @@ export const HOSTING_PERIODOS = [
   },
 ];
 
+// ─── Hospedagem Cloud ─────────────────────────────────────────────────────────
+export const CLOUD_PLANOS = [
+  {
+    id: 'cloud_economy',
+    nome: 'Cloud Economy',
+    nivel: 'Entrada Cloud',
+    tag: 'Mais popular',
+    popular: true,
+    cor: '#6479ed',
+    specs: { vcpu: 2, ram: 3, ssd: 200, sites: 300 },
+    extras: ['CDN gratuita', 'Backup diário', 'IP dedicado'],
+    idealPara: ['Alto tráfego', 'WordPress avançado', 'Múltiplos sites', 'Lojas online'],
+  },
+  {
+    id: 'cloud_professional',
+    nome: 'Cloud Professional',
+    nivel: 'Profissional',
+    tag: 'Recomendado',
+    cor: '#368d79',
+    specs: { vcpu: 4, ram: 6, ssd: 250, sites: 300 },
+    extras: ['CDN gratuita', 'Backup diário', 'IP dedicado'],
+    idealPara: ['Agências', 'E-commerce robusto', 'Apps de alto desempenho', 'SaaS'],
+  },
+  {
+    id: 'cloud_enterprise',
+    nome: 'Cloud Enterprise',
+    nivel: 'Máxima potência',
+    tag: 'Para grandes projetos',
+    cor: '#f59e0b',
+    specs: { vcpu: 6, ram: 12, ssd: 300, sites: 300 },
+    extras: ['CDN gratuita', 'Backup diário', 'IP dedicado', 'Suporte prioritário'],
+    idealPara: ['Grandes empresas', 'Infraestrutura crítica', 'Plataformas escaláveis', 'Alto volume'],
+  },
+];
+
+export const CLOUD_PERIODOS = [
+  {
+    periodo: '1 mês',
+    descricao: 'Experimente a hospedagem cloud sem compromisso.',
+    planos: [
+      { id: 'cloud_economy',      link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_economy&period=1&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-08ef-72f2-9b78-026dd4428615' },
+      { id: 'cloud_professional', link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_professional&period=1&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-3f23-729c-bb79-a4ffc76cd849' },
+      { id: 'cloud_enterprise',   link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_enterprise&period=1&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-57f8-71ba-ad9d-948c126cb832' },
+    ],
+  },
+  {
+    periodo: '12 meses',
+    descricao: 'Melhor entrada anual com preço competitivo.',
+    planos: [
+      { id: 'cloud_economy',      link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_economy&period=12&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-7799-7288-bb89-4ae6b60ea00b' },
+      { id: 'cloud_professional', link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_professional&period=12&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-8dfb-70c3-98bb-946024cb8e08' },
+      { id: 'cloud_enterprise',   link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_enterprise&period=12&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-a2f5-705f-8dcd-8bf889236913' },
+    ],
+  },
+  {
+    periodo: '24 meses',
+    descricao: 'Melhor custo-benefício para projetos em produção.',
+    planos: [
+      { id: 'cloud_economy',      link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_economy&period=24&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-c5b3-7019-8962-845838029f42' },
+      { id: 'cloud_professional', link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_professional&period=24&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-d82a-7371-8452-a10d596dcc72' },
+      { id: 'cloud_enterprise',   link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_enterprise&period=24&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-e354-736d-b70d-940a405c93f0' },
+    ],
+  },
+  {
+    periodo: '48 meses',
+    descricao: 'Máxima economia no longo prazo.',
+    planos: [
+      { id: 'cloud_economy',      link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_economy&period=48&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8014-f73e-714e-ad61-ef181e109fcd' },
+      { id: 'cloud_professional', link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_professional&period=48&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8015-02bc-7235-87e5-bd76aa7edcdf' },
+      { id: 'cloud_enterprise',   link: 'https://www.hostinger.com.br/cart?product=hosting%3Acloud_enterprise&period=48&referral_type=cart_link&REFERRALCODE=imparcialista&referral_id=019c8015-0ee0-7394-ae81-16ab19b6d934' },
+    ],
+  },
+];
+
 // ─── VPS ─────────────────────────────────────────────────────────────────────
 export const VPS_PERIODOS = [
   {
